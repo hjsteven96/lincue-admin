@@ -489,3 +489,9 @@ Using existing Firebase app...
  GET /admin/videos/new 200 in 49ms
  ✓ Compiled /api/admin/youtube-details in 145ms (543 modules)
  GET /api/admin/youtube-details?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsUl6zhUKeAw 200 in 418ms
+ ✓ Compiled in 163ms (360 modules)
+ GET /admin/videos/new 200 in 49ms
+ ✓ Compiled in 71ms (360 modules)
+ GET /admin/videos/new 200 in 8ms
+ ✓ Compiled in 219ms (360 modules)
+ GET /admin/videos/new 200 in 41ms
