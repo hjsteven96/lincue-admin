@@ -1,0 +1,491 @@
+
+> lincue-admin@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.3.4
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.45.141:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1082ms
+ ✓ Compiled /api/test-firebase in 395ms (414 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Creating new Firebase app...
+Firebase app created successfully
+Firestore initialized successfully with youtube-english database
+Testing Firebase connection...
+ GET /api/test-firebase 200 in 742ms
+ ✓ Compiled /api/admin/register-video in 188ms (416 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+Received video data: {
+  videoId: 'test123',
+  title: 'Test Video',
+  description: 'Test Description',
+  analysis: { summary: 'Test summary' },
+  transcript_text: 'Test transcript'
+}
+Attempting to save to Firestore: {
+  videoId: 'test123',
+  youtubeTitle: 'Test Video',
+  youtubeDescription: 'Test Description',
+  thumbnailUrl: '',
+  duration: 0,
+  timestamp: '2025-06-22T15:22:01.395Z',
+  analysis: { summary: 'Test summary' },
+  transcript_text: 'Test transcript'
+}
+Successfully saved to Firestore
+ POST /api/admin/register-video 200 in 313ms
+ ✓ Compiled /api/admin/users in 96ms (418 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/users 200 in 156ms
+ ✓ Compiled /middleware in 119ms (153 modules)
+ ○ Compiling /admin/videos/new ...
+ ✓ Compiled /admin/videos/new in 668ms (839 modules)
+ GET /admin/videos/new 200 in 784ms
+ ✓ Compiled /_not-found in 145ms (829 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 193ms
+ ✓ Compiled /favicon.ico in 59ms (511 modules)
+ GET /favicon.ico 200 in 109ms
+ GET /admin/videos/new 200 in 67ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ GET /favicon.ico 200 in 23ms
+ ✓ Compiled /admin/users in 228ms (852 modules)
+ GET /admin/users 200 in 300ms
+ ✓ Compiled /api/admin/users in 107ms (524 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/users 200 in 176ms
+ GET /api/admin/users 200 in 40ms
+ ✓ Compiled /admin/videos in 169ms (862 modules)
+ GET /admin/videos 200 in 205ms
+ GET /admin/videos/new 200 in 83ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ ✓ Compiled /api/admin/youtube-details in 123ms (865 modules)
+ GET /api/admin/youtube-details?url=https%3A%2F%2Fyoutu.be%2FIKNm08kJKEY%3Ffeature%3Dshared 200 in 482ms
+ ✓ Compiled /api/admin/register-video in 175ms (531 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+Received video data: {
+  videoId: 'IKNm08kJKEY',
+  title: '무너진 대학교육 (미네르바 대학교)',
+  description: 'Translated by M \n' +
+    '\n' +
+    'DISCLAIMER\n' +
+    '- The copyright of the original video belongs to the original copyright holder.\n' +
+    '- We check the copyright permission through the YouTube system, and if it is not confirmed within the system, we proceed with the translation work in the process of seeking permission through separate e-mails.\n' +
+    '- The Korean subtitles of the video were added within the scope of not distorting the contents of the original video in order to share the valuable video with more Korean viewers.\n' +
+    '- The purpose of this video is ONLY for the public good, such as education, motivation, or sharing of ideas with a wider public, and is not used for any additional purpose. In particular, there is NO revenue generated through YouTube AT ALL. \n' +
+    "- If you(copyright holder) request deletion, removal, correction, etc in any reasons caused by uploading the video, please contact us at 'businessnewsdaily@naver.com' and we will make corrections accordingly.",
+  thumbnailUrl: 'https://i.ytimg.com/vi/IKNm08kJKEY/hqdefault.jpg',
+  duration: 740,
+  analysis: {
+    summary: 'Naval Ravikant discusses fame, acknowledging its benefits like status and access, but highlighting its significant costs such as loss of privacy and the pressure to maintain an image. He distinguishes between earned fame from contributing positively to society and hollow fame pursued for its own sake, advocating for authenticity over perceived consistency.',
+    keywords: [
+      'pedestal',
+      'disingenuous',
+      'proclamations',
+      'tyrannical',
+      'priors'
+    ],
+    slang_expressions: [ [Object], [Object], [Object] ],
+    main_questions: [
+      'Is fame a worthwhile goal, and what are its inherent advantages and disadvantages?',
+      "How does public scrutiny impact an individual's ability to evolve their beliefs and maintain authenticity?"
+    ]
+  },
+  transcript_text: [
+    '[00:00] Is fame a worthwhile goal?',
+    "[00:03] Uh, it gets you invited to better parties. Gets you into better restaurants. Uh, fame. So fame is this funny thing where a lot of people know you but you don't know them. And, uh, it does get you put on a pedestal. Uh, it can get you what you want, uh, at a, at a distance. So I wouldn't say it's worthless. Obviously, people want it for a reason.",
+    "[00:26] Um, it's high status, so it attracts the opposite sex. Uh, especially for men, it attracts women. Uh, that said it is high cost. It means you have no privacy. Um, you do have weirdos and lunatics. Uh, you do get hit up a lot for weird things. Uh, and you're on a stage. So you're forced to perform. So you're forced to be consistent with your past proclamations and actions and you're going to have haters and all that nonsense.",
+    "[00:46] But the fact that we do it, the fact that we all seem to want it, means that it would be disingenuous to say, oh, no, no, I'm famous, but you don't want to be famous.",
+    "[01:10] Fame for fame's sake.",
+    "[01:12] Yeah, exactly. So it's better that it's earned fame. Uh, so, for example, earned respect in the tribe is you do things that are good for the tribe. Uh, who are the most famous people in human history?",
+    "[01:24] Uh, they're, uh, you know, they're, they're people who sort of transcended the self, the Buddhas and the Jesus's and the Muhammads of the world. Who else is famous? Uh, the artists are famous, you know, art lasts for a long time, the scientists are famous, they discover things, the conquerors are famous, presumably because they conquered for their tribe. There was someone that they were fighting for.",
+    '[01:43] So generally, the higher up you rise by doing things for greater and greater groups of people, even though it may be considered tyrannical or negative, like I, you know, Genghis Khan is famous, but, uh, to the Mongols, he was doing good, to the rest of them, not so much. Uh,',
+    "[02:08] The higher level you're operating at, the more people you're taking care of, the more you sort of earn respect and fame. And I think those are good reasons to be famous. If if fame is empty, if you're famous just because your name showed up in a lot of places or your face showed up in a lot of places, then that's a hollow fame. And I think deep down you will know that and so it'll be fragile and you'll always be afraid of losing it and then you'll be forced to perform.",
+    "[02:32] There's a challenge, I think, especially if people make very loud public proclamations about things. You mentioned there about, um, you're almost a hostage to the things that you used to say, that, um, being able to update your opinions and change your mind looks very similar to the Internet as hypocrisy does.",
+    "[02:53] You know, the difference between me saying something in the past and saying something different now is perhaps I've learned, perhaps I've updated my beliefs. But so few people do it in a legitimate way. I think that the Grifter shill, you see, this is the, the, the, the smoking gun that shows that he didn't really believe that thing all along.",
+    '[03:10] And, uh, yeah, I, I went to a retreat in LA a couple of years ago, and there was a guy that I used to follow, a big, um, business and productivity advice content creator, really, really successful, and he just totally stepped back from everything, went, uh, like monk mode and focused on his business. I asked him why, and he said, uh,',
+    '[03:29] I started feeling like I had to live up to in private the things that I was saying in public.',
+    "[03:34] Right. Yeah, it's a, it's a, what was it, the, uh, who said it was Mencken that a, um, foolish consistency is a hobgoblin of little minds, right? Um, but essentially, look, all life is all learning is error correction, right? Every knowledge creation system works through correcting errors, making guesses and correcting errors. So by definition, if you're learning, you're going to be wrong most of the time.",
+    "[03:55] And you're going to be updating your priors. And so, for example, I did this Joe Rogan podcast. I know it's like eight or nine years ago. Um, and people will call out like the one thing that didn't turn out to be correct, right? And it's just like, and they just beat on it because it, it helps them in their mind raise their status a little bit. Aha, I caught him in an error. Well, I think if you catch someone in a blatant lie where there's believe one thing and they say another, that's legitimate, that's a character flaw. They shouldn't be lying.",
+    "[04:21] But on the other hand, if they just made a guess at something and they got it wrong, and by the way, mostly it's about the AGI thing, and I think I'm still right about that. That's a different story. Um, people who think we have achieved AGI just failed a touring test from their side.",
+    "[04:35] But, uh, it's funny how people latch onto single proclamations, but the reality is all of us are dynamical systems. We're always changing, we're always learning, we're always growing, and, uh, hopefully we're correcting errors. What you don't want to be doing is lying in public so that because you're, you're trying to look good. And I think people can smell that.",
+    "[05:10] Uh, bullshit radars have become hyper-sensitized to try and work out whether or not this person means the thing that they're saying.",
+    '[05:18] Yeah. I mean, they they a lot of people are wrong. Most of us are wrong most of the time, especially in any new endeavor, any, you know, being wrong and disingenuous, though, purposefully wrong.',
+    "[05:27] Correct. Exactly. So I think I think that's the big difference. Is someone is wrong, no big deal, as long as they have a genuine reason for saying what they're saying or believing what they're believing. But if they are lying to elevate their status or their appearance or to live up to some expectation, that's the mistake, and that's a mistake not just for the listener, it's a mistake for themselves, because then you're going to get trapped in a hall of mirrors. You yourself are going to be consistent with your past proclamations. So if you're lying to others, you're going to be lying to yourself.",
+    "[05:51] Yeah, you're puppeted by a person that you are not even.",
+    "[05:54] That's right. Yeah. It's, it's like, what was that line? There's you're, you're basically trying to impress people who, you know, don't care about you.",
+    "[06:05] They don't like the real you, and if they saw the real you, they wouldn't care. And the people who would like the real you don't get to see the real you, so they pass you by.",
+    "[06:11] Right. You only want the respect of the very, very few people that you respect. Uh, trying to demand respect from the masses is a fool's errand. If you struggle to stay asleep because your body gets too hot or too cold, this is going to help. Just add an Eight Sleep Pod Four Ultra to your mattress like a fitted sheet, and it will automatically cool down or warm up each side of your bed up to 20 degrees. It's got integrated sensors that track your sleep time, your sleep phases, your HRV, your snoring, and your heart rate with 99% accuracy. And it even starts cooling or heating your bed an hour before you get into it. That is why Eight Sleep has been clinically proven to increase total sleep up to one hour every night. Best of all, they've got a 30-day sleep trial. So you can buy it and sleep on it for 29 nights, and if you don't like it, they will give you your money back. Plus, they ship internationally. Right now, you can get $350 off the Pod Four Ultra by going to the link in the description below or heading to EightSleep.com/modernwisdom and using the code modernwisdom at checkout. That's E I G H T S L E E P dot com slash modernwisdom and modernwisdom at checkout. Thank you very much for tuning in. If you enjoyed that clip with Naval, just a a mere taster, the full-length episode is available right here. Go on. Watch it. Play."
+  ]
+}
+Attempting to save to Firestore: {
+  videoId: 'IKNm08kJKEY',
+  youtubeTitle: '무너진 대학교육 (미네르바 대학교)',
+  youtubeDescription: 'Translated by M \n' +
+    '\n' +
+    'DISCLAIMER\n' +
+    '- The copyright of the original video belongs to the original copyright holder.\n' +
+    '- We check the copyright permission through the YouTube system, and if it is not confirmed within the system, we proceed with the translation work in the process of seeking permission through separate e-mails.\n' +
+    '- The Korean subtitles of the video were added within the scope of not distorting the contents of the original video in order to share the valuable video with more Korean viewers.\n' +
+    '- The purpose of this video is ONLY for the public good, such as education, motivation, or sharing of ideas with a wider public, and is not used for any additional purpose. In particular, there is NO revenue generated through YouTube AT ALL. \n' +
+    "- If you(copyright holder) request deletion, removal, correction, etc in any reasons caused by uploading the video, please contact us at 'businessnewsdaily@naver.com' and we will make corrections accordingly.",
+  thumbnailUrl: 'https://i.ytimg.com/vi/IKNm08kJKEY/hqdefault.jpg',
+  duration: 740,
+  timestamp: '2025-06-22T15:23:55.272Z',
+  analysis: {
+    summary: 'Naval Ravikant discusses fame, acknowledging its benefits like status and access, but highlighting its significant costs such as loss of privacy and the pressure to maintain an image. He distinguishes between earned fame from contributing positively to society and hollow fame pursued for its own sake, advocating for authenticity over perceived consistency.',
+    keywords: [
+      'pedestal',
+      'disingenuous',
+      'proclamations',
+      'tyrannical',
+      'priors'
+    ],
+    slang_expressions: [ [Object], [Object], [Object] ],
+    main_questions: [
+      'Is fame a worthwhile goal, and what are its inherent advantages and disadvantages?',
+      "How does public scrutiny impact an individual's ability to evolve their beliefs and maintain authenticity?"
+    ]
+  },
+  transcript_text: [
+    '[00:00] Is fame a worthwhile goal?',
+    "[00:03] Uh, it gets you invited to better parties. Gets you into better restaurants. Uh, fame. So fame is this funny thing where a lot of people know you but you don't know them. And, uh, it does get you put on a pedestal. Uh, it can get you what you want, uh, at a, at a distance. So I wouldn't say it's worthless. Obviously, people want it for a reason.",
+    "[00:26] Um, it's high status, so it attracts the opposite sex. Uh, especially for men, it attracts women. Uh, that said it is high cost. It means you have no privacy. Um, you do have weirdos and lunatics. Uh, you do get hit up a lot for weird things. Uh, and you're on a stage. So you're forced to perform. So you're forced to be consistent with your past proclamations and actions and you're going to have haters and all that nonsense.",
+    "[00:46] But the fact that we do it, the fact that we all seem to want it, means that it would be disingenuous to say, oh, no, no, I'm famous, but you don't want to be famous.",
+    "[01:10] Fame for fame's sake.",
+    "[01:12] Yeah, exactly. So it's better that it's earned fame. Uh, so, for example, earned respect in the tribe is you do things that are good for the tribe. Uh, who are the most famous people in human history?",
+    "[01:24] Uh, they're, uh, you know, they're, they're people who sort of transcended the self, the Buddhas and the Jesus's and the Muhammads of the world. Who else is famous? Uh, the artists are famous, you know, art lasts for a long time, the scientists are famous, they discover things, the conquerors are famous, presumably because they conquered for their tribe. There was someone that they were fighting for.",
+    '[01:43] So generally, the higher up you rise by doing things for greater and greater groups of people, even though it may be considered tyrannical or negative, like I, you know, Genghis Khan is famous, but, uh, to the Mongols, he was doing good, to the rest of them, not so much. Uh,',
+    "[02:08] The higher level you're operating at, the more people you're taking care of, the more you sort of earn respect and fame. And I think those are good reasons to be famous. If if fame is empty, if you're famous just because your name showed up in a lot of places or your face showed up in a lot of places, then that's a hollow fame. And I think deep down you will know that and so it'll be fragile and you'll always be afraid of losing it and then you'll be forced to perform.",
+    "[02:32] There's a challenge, I think, especially if people make very loud public proclamations about things. You mentioned there about, um, you're almost a hostage to the things that you used to say, that, um, being able to update your opinions and change your mind looks very similar to the Internet as hypocrisy does.",
+    "[02:53] You know, the difference between me saying something in the past and saying something different now is perhaps I've learned, perhaps I've updated my beliefs. But so few people do it in a legitimate way. I think that the Grifter shill, you see, this is the, the, the, the smoking gun that shows that he didn't really believe that thing all along.",
+    '[03:10] And, uh, yeah, I, I went to a retreat in LA a couple of years ago, and there was a guy that I used to follow, a big, um, business and productivity advice content creator, really, really successful, and he just totally stepped back from everything, went, uh, like monk mode and focused on his business. I asked him why, and he said, uh,',
+    '[03:29] I started feeling like I had to live up to in private the things that I was saying in public.',
+    "[03:34] Right. Yeah, it's a, it's a, what was it, the, uh, who said it was Mencken that a, um, foolish consistency is a hobgoblin of little minds, right? Um, but essentially, look, all life is all learning is error correction, right? Every knowledge creation system works through correcting errors, making guesses and correcting errors. So by definition, if you're learning, you're going to be wrong most of the time.",
+    "[03:55] And you're going to be updating your priors. And so, for example, I did this Joe Rogan podcast. I know it's like eight or nine years ago. Um, and people will call out like the one thing that didn't turn out to be correct, right? And it's just like, and they just beat on it because it, it helps them in their mind raise their status a little bit. Aha, I caught him in an error. Well, I think if you catch someone in a blatant lie where there's believe one thing and they say another, that's legitimate, that's a character flaw. They shouldn't be lying.",
+    "[04:21] But on the other hand, if they just made a guess at something and they got it wrong, and by the way, mostly it's about the AGI thing, and I think I'm still right about that. That's a different story. Um, people who think we have achieved AGI just failed a touring test from their side.",
+    "[04:35] But, uh, it's funny how people latch onto single proclamations, but the reality is all of us are dynamical systems. We're always changing, we're always learning, we're always growing, and, uh, hopefully we're correcting errors. What you don't want to be doing is lying in public so that because you're, you're trying to look good. And I think people can smell that.",
+    "[05:10] Uh, bullshit radars have become hyper-sensitized to try and work out whether or not this person means the thing that they're saying.",
+    '[05:18] Yeah. I mean, they they a lot of people are wrong. Most of us are wrong most of the time, especially in any new endeavor, any, you know, being wrong and disingenuous, though, purposefully wrong.',
+    "[05:27] Correct. Exactly. So I think I think that's the big difference. Is someone is wrong, no big deal, as long as they have a genuine reason for saying what they're saying or believing what they're believing. But if they are lying to elevate their status or their appearance or to live up to some expectation, that's the mistake, and that's a mistake not just for the listener, it's a mistake for themselves, because then you're going to get trapped in a hall of mirrors. You yourself are going to be consistent with your past proclamations. So if you're lying to others, you're going to be lying to yourself.",
+    "[05:51] Yeah, you're puppeted by a person that you are not even.",
+    "[05:54] That's right. Yeah. It's, it's like, what was that line? There's you're, you're basically trying to impress people who, you know, don't care about you.",
+    "[06:05] They don't like the real you, and if they saw the real you, they wouldn't care. And the people who would like the real you don't get to see the real you, so they pass you by.",
+    "[06:11] Right. You only want the respect of the very, very few people that you respect. Uh, trying to demand respect from the masses is a fool's errand. If you struggle to stay asleep because your body gets too hot or too cold, this is going to help. Just add an Eight Sleep Pod Four Ultra to your mattress like a fitted sheet, and it will automatically cool down or warm up each side of your bed up to 20 degrees. It's got integrated sensors that track your sleep time, your sleep phases, your HRV, your snoring, and your heart rate with 99% accuracy. And it even starts cooling or heating your bed an hour before you get into it. That is why Eight Sleep has been clinically proven to increase total sleep up to one hour every night. Best of all, they've got a 30-day sleep trial. So you can buy it and sleep on it for 29 nights, and if you don't like it, they will give you your money back. Plus, they ship internationally. Right now, you can get $350 off the Pod Four Ultra by going to the link in the description below or heading to EightSleep.com/modernwisdom and using the code modernwisdom at checkout. That's E I G H T S L E E P dot com slash modernwisdom and modernwisdom at checkout. Thank you very much for tuning in. If you enjoyed that clip with Naval, just a a mere taster, the full-length episode is available right here. Go on. Watch it. Play."
+  ]
+}
+Successfully saved to Firestore
+ POST /api/admin/register-video 200 in 270ms
+ GET /admin/videos 200 in 41ms
+ GET /admin/videos 200 in 11ms
+ GET /admin/videos 200 in 77ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ GET /favicon.ico 200 in 5ms
+ GET /admin/videos 200 in 45ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 16ms
+ GET /favicon.ico 200 in 4ms
+ ✓ Compiled in 142ms (347 modules)
+ GET /admin/videos 200 in 9ms
+ ✓ Compiled in 185ms (984 modules)
+ GET /admin/videos 200 in 220ms
+ GET /admin/videos 200 in 8ms
+ ✓ Compiled in 319ms (858 modules)
+ GET /admin/videos 200 in 36ms
+ ✓ Compiled /api/admin/videos in 118ms (866 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos 200 in 224ms
+ GET /api/admin/videos 200 in 46ms
+ ✓ Compiled in 211ms (880 modules)
+ GET /admin/videos 200 in 46ms
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos 200 in 64ms
+Video deleted successfully: test123
+ DELETE /api/admin/videos?videoId=test123 200 in 66ms
+ ✓ Compiled in 311ms (880 modules)
+ GET /admin/videos 200 in 41ms
+ ✓ Compiled in 85ms (354 modules)
+ ✓ Compiled in 83ms (354 modules)
+ GET /admin/videos 200 in 203ms
+ ✓ Compiled in 103ms (1019 modules)
+ GET /admin/videos 200 in 44ms
+ GET /admin/videos 200 in 19ms
+ GET /admin/videos 200 in 27ms
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+Video deleted successfully: IKNm08kJKEY
+ DELETE /api/admin/videos?videoId=IKNm08kJKEY 200 in 122ms
+Video deleted successfully: undefined
+ DELETE /api/admin/videos?videoId=undefined 200 in 44ms
+ GET /admin/videos 200 in 68ms
+ ✓ Compiled /_not-found in 328ms (870 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 382ms
+ ✓ Compiled /favicon.ico in 124ms (529 modules)
+ GET /favicon.ico 200 in 218ms
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos 200 in 237ms
+ ✓ Compiled in 98ms (357 modules)
+ GET /admin/videos 200 in 34ms
+ ✓ Compiled in 219ms (1025 modules)
+ GET /admin/videos 200 in 218ms
+ GET /admin/videos 200 in 8ms
+ ✓ Compiled in 352ms (886 modules)
+ GET /admin/videos 200 in 38ms
+ GET /admin/videos/new 200 in 13ms
+ ✓ Compiled /api/admin/youtube-details in 161ms (532 modules)
+ GET /api/admin/youtube-details?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Ftime_continue%3D1%26v%3D8YHqbqZ0l-8 200 in 432ms
+ ✓ Compiled in 250ms (891 modules)
+ GET /admin/videos/new 200 in 48ms
+ ✓ Compiled /api/admin/videos/[videoId] in 114ms (871 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Creating new Firebase app...
+Firebase app created successfully
+Firestore initialized successfully with youtube-english database
+Error: Route "/api/admin/videos/[videoId]" used `params.videoId`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at GET (src/app/api/admin/videos/[videoId]/route.ts:10:12)
+   8 |     }
+   9 |
+> 10 |     const { videoId } = params;
+     |            ^
+  11 |     
+  12 |     if (!videoId) {
+  13 |       return NextResponse.json({ error: 'Video ID is required' }, { status: 400 });
+ GET /api/admin/videos/fqtOWF_RyYw 200 in 772ms
+ ✓ Compiled /api/admin/register-video in 120ms (532 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+Received video data: {
+  videoId: '8YHqbqZ0l-8',
+  title: 'The Best Way To Gain Fame & Status - Naval Ravikant',
+  description: 'Chris and Naval Rvikant discuss whether fame is worth the cost or not. \n' +
+    '\n' +
+    'Get $350 off the Pod 4 Ultra at https://eightsleep.com/modernwisdom\n' +
+    '-\n' +
+    '\n' +
+    'Get access to every episode 10 hours before YouTube by subscribing for free on Spotify - https://spoti.fi/2LSimPn or Apple Podcasts - https://apple.co/2MNqIgw\n' +
+    '\n' +
+    'Get my free Reading List of 100 life-changing books here - https://chriswillx.com/books/\n' +
+    '\n' +
+    'Try my productivity energy drink Neutonic here - https://neutonic.com/modernwisdom\n' +
+    '\n' +
+    '-\n' +
+    '\n' +
+    'Get in touch in the comments below or head to...\n' +
+    'Instagram: https://www.instagram.com/chriswillx \n' +
+    'Twitter: https://www.twitter.com/chriswillx\n' +
+    'Email: https://chriswillx.com/contact/',
+  thumbnailUrl: 'https://i.ytimg.com/vi/8YHqbqZ0l-8/hqdefault.jpg',
+  duration: 444,
+  analysis: {
+    summary: 'Naval Ravikant discusses fame, acknowledging its benefits like status and access, but highlighting its significant costs such as loss of privacy and the pressure to maintain an image. He distinguishes between earned fame from contributing positively to society and hollow fame pursued for its own sake, advocating for authenticity over perceived consistency.',
+    keywords: [
+      'pedestal',
+      'disingenuous',
+      'proclamations',
+      'tyrannical',
+      'priors'
+    ],
+    slang_expressions: [ [Object], [Object], [Object] ],
+    main_questions: [
+      'Is fame a worthwhile goal, and what are its inherent advantages and disadvantages?',
+      "How does public scrutiny impact an individual's ability to evolve their beliefs and maintain authenticity?"
+    ]
+  },
+  transcript_text: [
+    '[00:00] Is fame a worthwhile goal?',
+    "[00:03] Uh, it gets you invited to better parties. Gets you into better restaurants. Uh, fame. So fame is this funny thing where a lot of people know you but you don't know them. And, uh, it does get you put on a pedestal. Uh, it can get you what you want, uh, at a, at a distance. So I wouldn't say it's worthless. Obviously, people want it for a reason.",
+    "[00:26] Um, it's high status, so it attracts the opposite sex. Uh, especially for men, it attracts women. Uh, that said it is high cost. It means you have no privacy. Um, you do have weirdos and lunatics. Uh, you do get hit up a lot for weird things. Uh, and you're on a stage. So you're forced to perform. So you're forced to be consistent with your past proclamations and actions and you're going to have haters and all that nonsense.",
+    "[00:46] But the fact that we do it, the fact that we all seem to want it, means that it would be disingenuous to say, oh, no, no, I'm famous, but you don't want to be famous.",
+    "[01:10] Fame for fame's sake.",
+    "[01:12] Yeah, exactly. So it's better that it's earned fame. Uh, so, for example, earned respect in the tribe is you do things that are good for the tribe. Uh, who are the most famous people in human history?",
+    "[01:24] Uh, they're, uh, you know, they're, they're people who sort of transcended the self, the Buddhas and the Jesus's and the Muhammads of the world. Who else is famous? Uh, the artists are famous, you know, art lasts for a long time, the scientists are famous, they discover things, the conquerors are famous, presumably because they conquered for their tribe. There was someone that they were fighting for.",
+    '[01:43] So generally, the higher up you rise by doing things for greater and greater groups of people, even though it may be considered tyrannical or negative, like I, you know, Genghis Khan is famous, but, uh, to the Mongols, he was doing good, to the rest of them, not so much. Uh,',
+    "[02:08] The higher level you're operating at, the more people you're taking care of, the more you sort of earn respect and fame. And I think those are good reasons to be famous. If if fame is empty, if you're famous just because your name showed up in a lot of places or your face showed up in a lot of places, then that's a hollow fame. And I think deep down you will know that and so it'll be fragile and you'll always be afraid of losing it and then you'll be forced to perform.",
+    "[02:32] There's a challenge, I think, especially if people make very loud public proclamations about things. You mentioned there about, um, you're almost a hostage to the things that you used to say, that, um, being able to update your opinions and change your mind looks very similar to the Internet as hypocrisy does.",
+    "[02:53] You know, the difference between me saying something in the past and saying something different now is perhaps I've learned, perhaps I've updated my beliefs. But so few people do it in a legitimate way. I think that the Grifter shill, you see, this is the, the, the, the smoking gun that shows that he didn't really believe that thing all along.",
+    '[03:10] And, uh, yeah, I, I went to a retreat in LA a couple of years ago, and there was a guy that I used to follow, a big, um, business and productivity advice content creator, really, really successful, and he just totally stepped back from everything, went, uh, like monk mode and focused on his business. I asked him why, and he said, uh,',
+    '[03:29] I started feeling like I had to live up to in private the things that I was saying in public.',
+    "[03:34] Right. Yeah, it's a, it's a, what was it, the, um, who said it was Mencken that a, um, foolish consistency is a hobgoblin of little minds, right? Um, but essentially, look, all life is all learning is error correction, right? Every knowledge creation system works through correcting errors, making guesses and correcting errors. So by definition, if you're learning, you're going to be wrong most of the time.",
+    "[03:55] And you're going to be updating your priors. And so, for example, I did this Joe Rogan podcast. I know it's like eight or nine years ago. Um, and people will call out like the one thing that didn't turn out to be correct, right? And it's just like, and they just beat on it because it, it helps them in their mind raise their status a little bit. Aha, I caught him in an error. Well, I think if you catch someone in a blatant lie where there's believe one thing and they say another, that's legitimate, that's a character flaw. They shouldn't be lying.",
+    "[04:21] But on the other hand, if they just made a guess at something and they got it wrong, and by the way, mostly it's about the AGI thing, and I think I'm still right about that. That's a different story. Um, people who think we have achieved AGI just failed a touring test from their side.",
+    "[04:35] But, uh, it's funny how people latch onto single proclamations, but the reality is all of us are dynamical systems. We're always changing, we're always learning, we're always growing, and, uh, hopefully we're correcting errors. What you don't want to be doing is lying in public so that because you're, you're trying to look good. And I think people can smell that.",
+    "[05:10] Uh, bullshit radars have become hyper-sensitized to try and work out whether or not this person means the thing that they're saying.",
+    '[05:18] Yeah. I mean, they they a lot of people are wrong. Most of us are wrong most of the time, especially in any new endeavor, any, you know, being wrong and disingenuous, though, purposefully wrong.',
+    "[05:27] Correct. Exactly. So I think I think that's the big difference. Is someone is wrong, no big deal, as long as they have a genuine reason for saying what they're saying or believing what they're believing. But if they are lying to elevate their status or their appearance or to live up to some expectation, that's the mistake, and that's a mistake not just for the listener, it's a mistake for themselves, because then you're going to get trapped in a hall of mirrors. You yourself are going to be consistent with your past proclamations. So if you're lying to others, you're going to be lying to yourself.",
+    "[05:51] Yeah, you're puppeted by a person that you are not even.",
+    "[05:54] That's right. Yeah. It's, it's like, what was that line? There's you're, you're basically trying to impress people who, you know, don't care about you.",
+    "[06:05] They don't like the real you, and if they saw the real you, they wouldn't care. And the people who would like the real you don't get to see the real you, so they pass you by.",
+    "[06:11] Right. You only want the respect of the very, very few people that you respect. Uh, trying to demand respect from the masses is a fool's errand.",
+    "[06:20] If you struggle to stay asleep because your body gets too hot or too cold, this is going to help. Just add an Eight Sleep Pod Four Ultra to your mattress like a fitted sheet, and it will automatically cool down or warm up each side of your bed up to 20 degrees. It's got integrated sensors that track your sleep time, your sleep phases, your HRV, your snoring, and your heart rate with 99% accuracy. And it even starts cooling or heating your bed an hour before you get into it. That is why Eight Sleep has been clinically proven to increase total sleep up to one hour every night.",
+    "[06:50] Best of all, they've got a 30-day sleep trial. So you can buy it and sleep on it for 29 nights, and if you don't like it, they will give you your money back. Plus, they ship internationally. Right now, you can get $350 off the Pod Four Ultra by going to the link in the description below or heading to EightSleep.com/modernwisdom and using the code modernwisdom at checkout. That's E I G H T S L E E P dot com slash modernwisdom and modernwisdom at checkout.",
+    '[07:12] Thank you very much for tuning in. If you enjoyed that clip with Naval, just a a mere taster, the full-length episode is available right here. Go on. Watch it. Play.'
+  ]
+}
+Attempting to save to Firestore: {
+  videoId: '8YHqbqZ0l-8',
+  youtubeTitle: 'The Best Way To Gain Fame & Status - Naval Ravikant',
+  youtubeDescription: 'Chris and Naval Rvikant discuss whether fame is worth the cost or not. \n' +
+    '\n' +
+    'Get $350 off the Pod 4 Ultra at https://eightsleep.com/modernwisdom\n' +
+    '-\n' +
+    '\n' +
+    'Get access to every episode 10 hours before YouTube by subscribing for free on Spotify - https://spoti.fi/2LSimPn or Apple Podcasts - https://apple.co/2MNqIgw\n' +
+    '\n' +
+    'Get my free Reading List of 100 life-changing books here - https://chriswillx.com/books/\n' +
+    '\n' +
+    'Try my productivity energy drink Neutonic here - https://neutonic.com/modernwisdom\n' +
+    '\n' +
+    '-\n' +
+    '\n' +
+    'Get in touch in the comments below or head to...\n' +
+    'Instagram: https://www.instagram.com/chriswillx \n' +
+    'Twitter: https://www.twitter.com/chriswillx\n' +
+    'Email: https://chriswillx.com/contact/',
+  thumbnailUrl: 'https://i.ytimg.com/vi/8YHqbqZ0l-8/hqdefault.jpg',
+  duration: 444,
+  timestamp: '2025-06-22T15:29:52.703Z',
+  analysis: {
+    summary: 'Naval Ravikant discusses fame, acknowledging its benefits like status and access, but highlighting its significant costs such as loss of privacy and the pressure to maintain an image. He distinguishes between earned fame from contributing positively to society and hollow fame pursued for its own sake, advocating for authenticity over perceived consistency.',
+    keywords: [
+      'pedestal',
+      'disingenuous',
+      'proclamations',
+      'tyrannical',
+      'priors'
+    ],
+    slang_expressions: [ [Object], [Object], [Object] ],
+    main_questions: [
+      'Is fame a worthwhile goal, and what are its inherent advantages and disadvantages?',
+      "How does public scrutiny impact an individual's ability to evolve their beliefs and maintain authenticity?"
+    ]
+  },
+  transcript_text: [
+    '[00:00] Is fame a worthwhile goal?',
+    "[00:03] Uh, it gets you invited to better parties. Gets you into better restaurants. Uh, fame. So fame is this funny thing where a lot of people know you but you don't know them. And, uh, it does get you put on a pedestal. Uh, it can get you what you want, uh, at a, at a distance. So I wouldn't say it's worthless. Obviously, people want it for a reason.",
+    "[00:26] Um, it's high status, so it attracts the opposite sex. Uh, especially for men, it attracts women. Uh, that said it is high cost. It means you have no privacy. Um, you do have weirdos and lunatics. Uh, you do get hit up a lot for weird things. Uh, and you're on a stage. So you're forced to perform. So you're forced to be consistent with your past proclamations and actions and you're going to have haters and all that nonsense.",
+    "[00:46] But the fact that we do it, the fact that we all seem to want it, means that it would be disingenuous to say, oh, no, no, I'm famous, but you don't want to be famous.",
+    "[01:10] Fame for fame's sake.",
+    "[01:12] Yeah, exactly. So it's better that it's earned fame. Uh, so, for example, earned respect in the tribe is you do things that are good for the tribe. Uh, who are the most famous people in human history?",
+    "[01:24] Uh, they're, uh, you know, they're, they're people who sort of transcended the self, the Buddhas and the Jesus's and the Muhammads of the world. Who else is famous? Uh, the artists are famous, you know, art lasts for a long time, the scientists are famous, they discover things, the conquerors are famous, presumably because they conquered for their tribe. There was someone that they were fighting for.",
+    '[01:43] So generally, the higher up you rise by doing things for greater and greater groups of people, even though it may be considered tyrannical or negative, like I, you know, Genghis Khan is famous, but, uh, to the Mongols, he was doing good, to the rest of them, not so much. Uh,',
+    "[02:08] The higher level you're operating at, the more people you're taking care of, the more you sort of earn respect and fame. And I think those are good reasons to be famous. If if fame is empty, if you're famous just because your name showed up in a lot of places or your face showed up in a lot of places, then that's a hollow fame. And I think deep down you will know that and so it'll be fragile and you'll always be afraid of losing it and then you'll be forced to perform.",
+    "[02:32] There's a challenge, I think, especially if people make very loud public proclamations about things. You mentioned there about, um, you're almost a hostage to the things that you used to say, that, um, being able to update your opinions and change your mind looks very similar to the Internet as hypocrisy does.",
+    "[02:53] You know, the difference between me saying something in the past and saying something different now is perhaps I've learned, perhaps I've updated my beliefs. But so few people do it in a legitimate way. I think that the Grifter shill, you see, this is the, the, the, the smoking gun that shows that he didn't really believe that thing all along.",
+    '[03:10] And, uh, yeah, I, I went to a retreat in LA a couple of years ago, and there was a guy that I used to follow, a big, um, business and productivity advice content creator, really, really successful, and he just totally stepped back from everything, went, uh, like monk mode and focused on his business. I asked him why, and he said, uh,',
+    '[03:29] I started feeling like I had to live up to in private the things that I was saying in public.',
+    "[03:34] Right. Yeah, it's a, it's a, what was it, the, um, who said it was Mencken that a, um, foolish consistency is a hobgoblin of little minds, right? Um, but essentially, look, all life is all learning is error correction, right? Every knowledge creation system works through correcting errors, making guesses and correcting errors. So by definition, if you're learning, you're going to be wrong most of the time.",
+    "[03:55] And you're going to be updating your priors. And so, for example, I did this Joe Rogan podcast. I know it's like eight or nine years ago. Um, and people will call out like the one thing that didn't turn out to be correct, right? And it's just like, and they just beat on it because it, it helps them in their mind raise their status a little bit. Aha, I caught him in an error. Well, I think if you catch someone in a blatant lie where there's believe one thing and they say another, that's legitimate, that's a character flaw. They shouldn't be lying.",
+    "[04:21] But on the other hand, if they just made a guess at something and they got it wrong, and by the way, mostly it's about the AGI thing, and I think I'm still right about that. That's a different story. Um, people who think we have achieved AGI just failed a touring test from their side.",
+    "[04:35] But, uh, it's funny how people latch onto single proclamations, but the reality is all of us are dynamical systems. We're always changing, we're always learning, we're always growing, and, uh, hopefully we're correcting errors. What you don't want to be doing is lying in public so that because you're, you're trying to look good. And I think people can smell that.",
+    "[05:10] Uh, bullshit radars have become hyper-sensitized to try and work out whether or not this person means the thing that they're saying.",
+    '[05:18] Yeah. I mean, they they a lot of people are wrong. Most of us are wrong most of the time, especially in any new endeavor, any, you know, being wrong and disingenuous, though, purposefully wrong.',
+    "[05:27] Correct. Exactly. So I think I think that's the big difference. Is someone is wrong, no big deal, as long as they have a genuine reason for saying what they're saying or believing what they're believing. But if they are lying to elevate their status or their appearance or to live up to some expectation, that's the mistake, and that's a mistake not just for the listener, it's a mistake for themselves, because then you're going to get trapped in a hall of mirrors. You yourself are going to be consistent with your past proclamations. So if you're lying to others, you're going to be lying to yourself.",
+    "[05:51] Yeah, you're puppeted by a person that you are not even.",
+    "[05:54] That's right. Yeah. It's, it's like, what was that line? There's you're, you're basically trying to impress people who, you know, don't care about you.",
+    "[06:05] They don't like the real you, and if they saw the real you, they wouldn't care. And the people who would like the real you don't get to see the real you, so they pass you by.",
+    "[06:11] Right. You only want the respect of the very, very few people that you respect. Uh, trying to demand respect from the masses is a fool's errand.",
+    "[06:20] If you struggle to stay asleep because your body gets too hot or too cold, this is going to help. Just add an Eight Sleep Pod Four Ultra to your mattress like a fitted sheet, and it will automatically cool down or warm up each side of your bed up to 20 degrees. It's got integrated sensors that track your sleep time, your sleep phases, your HRV, your snoring, and your heart rate with 99% accuracy. And it even starts cooling or heating your bed an hour before you get into it. That is why Eight Sleep has been clinically proven to increase total sleep up to one hour every night.",
+    "[06:50] Best of all, they've got a 30-day sleep trial. So you can buy it and sleep on it for 29 nights, and if you don't like it, they will give you your money back. Plus, they ship internationally. Right now, you can get $350 off the Pod Four Ultra by going to the link in the description below or heading to EightSleep.com/modernwisdom and using the code modernwisdom at checkout. That's E I G H T S L E E P dot com slash modernwisdom and modernwisdom at checkout.",
+    '[07:12] Thank you very much for tuning in. If you enjoyed that clip with Naval, just a a mere taster, the full-length episode is available right here. Go on. Watch it. Play.'
+  ]
+}
+Successfully saved to Firestore
+ POST /api/admin/register-video 200 in 207ms
+ GET /admin/videos 200 in 32ms
+ ✓ Compiled /api/admin/videos in 111ms (534 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos 200 in 204ms
+ GET /api/admin/videos 200 in 63ms
+ ✓ Compiled in 188ms (889 modules)
+ GET /admin/videos 200 in 26ms
+ ✓ Compiled in 78ms (355 modules)
+ GET /admin/videos 200 in 11ms
+ ✓ Compiled in 161ms (355 modules)
+ GET /admin/videos 200 in 26ms
+ ✓ Compiled in 71ms (355 modules)
+ GET /admin/videos 200 in 11ms
+ ✓ Compiled in 82ms (355 modules)
+ GET /admin/videos 200 in 10ms
+ ✓ Compiled /admin/users in 227ms (510 modules)
+ GET /admin/users 200 in 294ms
+ GET /admin/users 200 in 8ms
+ ✓ Compiled /api/admin/users in 113ms (532 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/users 200 in 233ms
+ GET /api/admin/users 200 in 38ms
+ GET /admin/users 200 in 93ms
+ ✓ Compiled /_not-found in 239ms (877 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 311ms
+ ✓ Compiled /favicon.ico in 81ms (535 modules)
+ GET /favicon.ico 200 in 166ms
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /admin/users 200 in 17ms
+ GET /api/admin/users 200 in 192ms
+ GET /admin/videos 200 in 16ms
+ ✓ Compiled /api/admin/videos in 194ms (537 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos 200 in 272ms
+ GET /api/admin/videos 200 in 47ms
+ ✓ Compiled /admin/videos/[videoId] in 387ms (894 modules)
+ GET /admin/videos/8YHqbqZ0l-8 200 in 791ms
+ ✓ Compiled /api/admin/videos/[videoId] in 162ms (547 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos/8YHqbqZ0l-8 200 in 227ms
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Creating new Firebase app...
+Firebase app created successfully
+Firestore initialized successfully with youtube-english database
+ ✓ Compiled /api/admin/videos/[videoId] in 702ms (900 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos/8YHqbqZ0l-8 200 in 497ms
+ GET /admin/videos/8YHqbqZ0l-8 200 in 41ms
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Creating new Firebase app...
+Firebase app created successfully
+Firestore initialized successfully with youtube-english database
+ GET /admin/videos 200 in 19ms
+ ✓ Compiled /api/admin/videos in 166ms (540 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos 200 in 253ms
+ GET /api/admin/videos 200 in 63ms
+ GET /admin/videos/new 200 in 49ms
+ ✓ Compiled /api/admin/youtube-details in 145ms (543 modules)
+ GET /api/admin/youtube-details?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsUl6zhUKeAw 200 in 418ms

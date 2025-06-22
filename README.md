@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lincue Admin Panel
 
-## Getting Started
+Next.js 기반의 Lincue 서비스 백오피스 관리 시스템입니다.
 
-First, run the development server:
+## 기능
 
+- **관리자 인증**: 간단한 이메일/패스워드 로그인 (admin/1234)
+- **사용자 관리**: 사용자 목록 조회 및 요금제 변경
+- **영상 관리**: YouTube 영상 수동 등록 및 Gemini 분석 결과 입력
+
+## 설치 및 실행
+
+1. 의존성 설치:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. 환경 변수 설정:
+`.env.local` 파일에 Firebase 및 YouTube API 설정을 추가하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. 개발 서버 실행:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. 브라우저에서 `http://localhost:3000` 접속
 
-## Learn More
+## 로그인 정보
 
-To learn more about Next.js, take a look at the following resources:
+- 이메일/사용자명: `admin`
+- 패스워드: `1234`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 주요 페이지
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/login` - 관리자 로그인
+- `/admin` - 대시보드
+- `/admin/users` - 사용자 관리
+- `/admin/videos` - 영상 목록
+- `/admin/videos/new` - 새 영상 등록
 
-## Deploy on Vercel
+## Firebase 설정
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Firebase 프로젝트 설정 후 다음 환경 변수를 설정하세요:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+# Firebase Client Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+
+# Firebase Admin SDK
+FIREBASE_ADMIN_PROJECT_ID=your-project-id
+FIREBASE_ADMIN_PRIVATE_KEY=your-private-key
+FIREBASE_ADMIN_CLIENT_EMAIL=your-service-account@your-project.iam.gserviceaccount.com
+
+# YouTube Data API
+YOUTUBE_DATA_API_KEY=your-youtube-api-key
+
+# Admin Credentials
+ADMIN_EMAIL=admin
+ADMIN_PASSWORD=1234
+```
+
+## 데이터베이스 구조
+
+### users/{uid}
+- `uid`: Firebase Auth UID
+- `email`: 사용자 이메일
+- `displayName`: 사용자 이름
+- `plan`: "free" | "plus" | "pro"
+- `createdAt`: 생성일
+- `usage`: 사용량 정보
+
+### videoAnalyses/{videoId}
+- `videoId`: YouTube 영상 ID
+- `youtubeTitle`: 영상 제목
+- `youtubeDescription`: 영상 설명
+- `thumbnailUrl`: 썸네일 URL
+- `duration`: 영상 길이 (초)
+- `timestamp`: 등록일
+- `analysis`: Gemini 분석 결과
+- `transcript_text`: 전체 텍스트
+
+## 기술 스택
+
+- **Frontend**: Next.js 14, React, TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Firebase Firestore
+- **Icons**: Lucide React
+- **Authentication**: 커스텀 인증 시스템

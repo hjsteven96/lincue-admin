@@ -1,0 +1,642 @@
+
+> lincue-admin@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.3.4
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.45.141:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1091ms
+ ✓ Compiled /api/test-firebase in 359ms (414 modules)
+Testing Firebase connection...
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Firebase test error: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/test-firebase/route.ts:22:44)
+  20 |     // Try to read from a collection
+  21 |     const testRef = adminDb.collection('test');
+> 22 |     const snapshot = await testRef.limit(1).get();
+     |                                            ^
+  23 |     
+  24 |     return NextResponse.json({ 
+  25 |       success: true,  {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/test-firebase 500 in 805ms
+ ✓ Compiled /middleware in 147ms (153 modules)
+ ○ Compiling /api/admin/register-video ...
+ ✓ Compiled /api/admin/register-video in 829ms (849 modules)
+Received video data: {
+  videoId: 'test123',
+  title: 'Test Video',
+  description: 'Test Description',
+  analysis: { summary: 'Test summary' },
+  transcript_text: 'Test transcript'
+}
+Attempting to save to Firestore: {
+  videoId: 'test123',
+  youtubeTitle: 'Test Video',
+  youtubeDescription: 'Test Description',
+  thumbnailUrl: '',
+  duration: 0,
+  timestamp: '2025-06-22T15:11:53.070Z',
+  analysis: { summary: 'Test summary' },
+  transcript_text: 'Test transcript'
+}
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/write-batch.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error registering video: Error: 5 NOT_FOUND: 
+    at POST (src/app/api/admin/register-video/route.ts:31:69)
+  29 |
+  30 |     console.log('Attempting to save to Firestore:', docData);
+> 31 |     await adminDb.collection('videoAnalyses').doc(videoData.videoId).set(docData);
+     |                                                                     ^
+  32 |     console.log('Successfully saved to Firestore');
+  33 |
+  34 |     return NextResponse.json({ success: true, videoId: videoData.videoId }); {
+  code: 5,
+  details: '',
+  metadata: [Metadata],
+  note: 'Exception occurred in retry method that was not classified as transient'
+}
+Error details: 5 NOT_FOUND: 
+Error stack: Error: 5 NOT_FOUND: 
+    at callErrorFromStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/call.js:32:19)
+    at Object.onReceiveStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client.js:193:76)
+    at Object.onReceiveStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client-interceptors.js:361:141)
+    at Object.onReceiveStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client-interceptors.js:324:181)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/resolving-call.js:135:78
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+for call at
+    at ServiceClientImpl.makeUnaryRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client.js:161:32)
+    at ServiceClientImpl.<anonymous> (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/make-client.js:105:19)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js:237:29
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/timeout.js:44:16
+    at repeat (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/retries.js:82:25)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/retries.js:125:13
+    at OngoingCallPromise.call (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/call.js:67:27)
+    at NormalApiCaller.call (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/normalApiCaller.js:34:19)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/createApiCall.js:112:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Caused by: Error: 
+    at _firestore._traceUtil.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/write-batch.js:438:27)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:110:30
+    at NoopContextManager.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js:25:19)
+    at ContextAPI.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)
+    at NoopTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js:65:31)
+    at ProxyTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js:36:24)
+    at EnabledTraceUtil.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:102:28)
+    at WriteBatch.commit (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/write-batch.js:436:43)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js:350:31
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:110:30
+    at NoopContextManager.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js:25:19)
+    at ContextAPI.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)
+    at NoopTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js:65:31)
+    at ProxyTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js:36:24)
+    at EnabledTraceUtil.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:102:28)
+    at DocumentReference.set (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js:342:43)
+    at POST (webpack-internal:///(rsc)/./src/app/api/admin/register-video/route.ts:43:123)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.do (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:26:34112)
+    at async AppRouteRouteModule.handle (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:26:41338)
+    at async doRender (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:1518:42)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:1920:28)
+    at async DevServer.renderPageComponent (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:2408:24)
+    at async DevServer.renderToResponseImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:2445:32)
+    at async DevServer.pipeImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:1008:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/next-server.js:305:17)
+    at async DevServer.handleRequestImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:900:17)
+    at async /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/dev/next-dev-server.js:371:20
+    at async Span.traceAsyncFn (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/dev/next-dev-server.js:368:24)
+    at async invokeRender (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/router-server.js:237:21)
+    at async handleRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/router-server.js:428:24)
+    at async requestHandlerImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/router-server.js:452:13)
+    at async Server.requestListener (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/start-server.js:158:13)
+ POST /api/admin/register-video 500 in 850ms
+ GET /admin/users 200 in 1058ms
+ ✓ Compiled /_not-found in 194ms (853 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 245ms
+ ✓ Compiled /api/admin/users in 57ms (521 modules)
+ ✓ Compiled in 67ms (334 modules)
+ GET /favicon.ico 200 in 166ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 226ms
+ GET /admin/users 200 in 28ms
+ ✓ Compiled /admin/videos in 328ms (859 modules)
+ GET /admin/videos 200 in 363ms
+ GET /admin/users 200 in 12ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 71ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 45ms
+ GET /admin/users 200 in 86ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
+ GET /favicon.ico 200 in 29ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 79ms
+ GET /admin/users 200 in 56ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 19ms
+ GET /favicon.ico 200 in 5ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 79ms
+ ✓ Compiled in 269ms (839 modules)
+ GET /admin/users 200 in 65ms
+ ✓ Compiled in 80ms (345 modules)
+ GET /admin/users 200 in 7ms
+ ✓ Compiled in 64ms (345 modules)
+ GET /admin/users 200 in 8ms
+ ✓ Compiled in 63ms (345 modules)
+ GET /admin/users 200 in 11ms
+ ✓ Compiled in 58ms (345 modules)
+ GET /admin/users 200 in 7ms
+ ✓ Compiled in 100ms (345 modules)
+ GET /admin/users 200 in 8ms
+ ✓ Compiled in 64ms (345 modules)
+ GET /admin/users 200 in 9ms
+ ✓ Compiled in 58ms (345 modules)
+ GET /admin/users 200 in 8ms
+ ✓ Compiled in 64ms (345 modules)
+ GET /admin/users 200 in 8ms
+ GET /admin/users 200 in 72ms
+ ✓ Compiled /_not-found in 223ms (829 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 275ms
+ ✓ Compiled /api/admin/users in 56ms (511 modules)
+ ✓ Compiled (519 modules)
+ GET /favicon.ico 200 in 149ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 191ms
+ ✓ Compiled /admin/videos in 197ms (521 modules)
+ GET /admin/videos 200 in 239ms
+ GET /admin/users 200 in 15ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 69ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:6:60)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const usersSnapshot = await adminDb.collection('users').get();
+    |                                                            ^
+  7 |     const users = usersSnapshot.docs.map(doc => ({
+  8 |       uid: doc.id,
+  9 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/admin/users 500 in 75ms
+ GET /admin/videos 200 in 21ms
+ ✓ Compiled /admin/videos/new in 301ms (836 modules)
+ GET /admin/videos/new 200 in 406ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled /_not-found in 83ms (840 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 132ms
+ ✓ Compiled /api/test-firebase in 109ms (524 modules)
+Testing Firebase connection...
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Firebase test error: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/test-firebase/route.ts:31:48)
+  29 |         // Try to read from a collection
+  30 |         const testRef = adminDb.collection("youtube-english");
+> 31 |         const snapshot = await testRef.limit(1).get();
+     |                                                ^
+  32 |
+  33 |         return NextResponse.json({
+  34 |             success: true, {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+ GET /api/test-firebase 500 in 249ms
+ GET /admin/videos/new 200 in 86ms
+ ✓ Compiled in 76ms (350 modules)
+ ⨯ SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>) {
+  page: '/admin/videos/new'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 605ms (1348 modules)
+ GET /admin/videos/new 500 in 933ms
+ GET /admin/videos/new 200 in 40ms
+ GET /admin/videos/new 200 in 8ms
+ GET /admin/videos/new 200 in 7ms
+ GET /admin/videos/new 200 in 6ms
+ GET /admin/videos/new 200 in 67ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 29ms
+ ✓ Compiled /api/init-firebase in 203ms (1197 modules)
+Initializing Firebase database...
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/write-batch.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Database initialization error: Error: 5 NOT_FOUND: 
+    at POST (src/app/api/init-firebase/route.ts:22:51)
+  20 |
+  21 |     // Create a test document in a system collection
+> 22 |     await adminDb.collection('system').doc('init').set(testDoc);
+     |                                                   ^
+  23 |     console.log('Database initialization successful');
+  24 |
+  25 |     // Now try to read it back {
+  code: 5,
+  details: '',
+  metadata: [Metadata],
+  note: 'Exception occurred in retry method that was not classified as transient'
+}
+ POST /api/init-firebase 500 in 304ms
+ ✓ Compiled in 154ms (597 modules)
+ GET /admin/videos/new 200 in 33ms
+ ✓ Compiled /api/admin/users in 124ms (614 modules)
+ GET /admin/videos/new 200 in 25ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:38:60)
+  36 |     }
+  37 |
+> 38 |     const usersSnapshot = await adminDb.collection('users').get();
+     |                                                            ^
+  39 |     const users = usersSnapshot.docs.map(doc => ({
+  40 |       uid: doc.id,
+  41 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+Firebase error, returning fallback mock data
+ GET /api/admin/users 200 in 210ms
+ GET /admin/videos/new 200 in 97ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 18ms
+ ✓ Compiled /favicon.ico in 135ms (614 modules)
+ GET /favicon.ico 200 in 158ms
+ GET /admin/videos/new 200 in 68ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
+ GET /favicon.ico 200 in 3ms
+ ✓ Compiled /admin/videos in 91ms (616 modules)
+ GET /admin/videos 200 in 116ms
+ GET /admin/users 200 in 17ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:38:60)
+  36 |     }
+  37 |
+> 38 |     const usersSnapshot = await adminDb.collection('users').get();
+     |                                                            ^
+  39 |     const users = usersSnapshot.docs.map(doc => ({
+  40 |       uid: doc.id,
+  41 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+Firebase error, returning fallback mock data
+ GET /api/admin/users 200 in 72ms
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/query.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error fetching users: Error: 5 NOT_FOUND: 
+    at GET (src/app/api/admin/users/route.ts:38:60)
+  36 |     }
+  37 |
+> 38 |     const usersSnapshot = await adminDb.collection('users').get();
+     |                                                            ^
+  39 |     const users = usersSnapshot.docs.map(doc => ({
+  40 |       uid: doc.id,
+  41 |       ...doc.data(), {
+  code: 5,
+  details: '',
+  metadata: [Metadata]
+}
+Firebase error, returning fallback mock data
+ GET /api/admin/users 200 in 53ms
+ GET /admin/videos 200 in 12ms
+ GET /admin/videos/new 200 in 63ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+ ✓ Compiled /api/admin/youtube-details in 188ms (1157 modules)
+ GET /api/admin/youtube-details?url=https%3A%2F%2Fyoutu.be%2FIKNm08kJKEY%3Ffeature%3Dshared 200 in 507ms
+ ✓ Compiled /api/admin/register-video in 152ms (577 modules)
+Received video data: {
+  videoId: 'IKNm08kJKEY',
+  title: '무너진 대학교육 (미네르바 대학교)',
+  description: 'Translated by M \n' +
+    '\n' +
+    'DISCLAIMER\n' +
+    '- The copyright of the original video belongs to the original copyright holder.\n' +
+    '- We check the copyright permission through the YouTube system, and if it is not confirmed within the system, we proceed with the translation work in the process of seeking permission through separate e-mails.\n' +
+    '- The Korean subtitles of the video were added within the scope of not distorting the contents of the original video in order to share the valuable video with more Korean viewers.\n' +
+    '- The purpose of this video is ONLY for the public good, such as education, motivation, or sharing of ideas with a wider public, and is not used for any additional purpose. In particular, there is NO revenue generated through YouTube AT ALL. \n' +
+    "- If you(copyright holder) request deletion, removal, correction, etc in any reasons caused by uploading the video, please contact us at 'businessnewsdaily@naver.com' and we will make corrections accordingly.",
+  thumbnailUrl: 'https://i.ytimg.com/vi/IKNm08kJKEY/hqdefault.jpg',
+  duration: 740,
+  analysis: {
+    summary: 'Naval Ravikant discusses fame, acknowledging its benefits like status and access, but highlighting its significant costs such as loss of privacy and the pressure to maintain an image. He distinguishes between earned fame from contributing positively to society and hollow fame pursued for its own sake, advocating for authenticity over perceived consistency.',
+    keywords: [
+      'pedestal',
+      'disingenuous',
+      'proclamations',
+      'tyrannical',
+      'priors'
+    ],
+    slang_expressions: [ [Object], [Object], [Object] ],
+    main_questions: [
+      'Is fame a worthwhile goal, and what are its inherent advantages and disadvantages?',
+      "How does public scrutiny impact an individual's ability to evolve their beliefs and maintain authenticity?"
+    ]
+  },
+  transcript_text: [
+    '[00:00] Is fame a worthwhile goal?',
+    "[00:03] Uh, it gets you invited to better parties. Gets you into better restaurants. Uh, fame. So fame is this funny thing where a lot of people know you but you don't know them. And, uh, it does get you put on a pedestal. Uh, it can get you what you want, uh, at a, at a distance. So I wouldn't say it's worthless. Obviously, people want it for a reason.",
+    "[00:26] Um, it's high status, so it attracts the opposite sex. Uh, especially for men, it attracts women. Uh, that said it is high cost. It means you have no privacy. Um, you do have weirdos and lunatics. Uh, you do get hit up a lot for weird things. Uh, and you're on a stage. So you're forced to perform. So you're forced to be consistent with your past proclamations and actions and you're going to have haters and all that nonsense.",
+    "[00:46] But the fact that we do it, the fact that we all seem to want it, means that it would be disingenuous to say, oh, no, no, I'm famous, but you don't want to be famous.",
+    "[01:10] Fame for fame's sake.",
+    "[01:12] Yeah, exactly. So it's better that it's earned fame. Uh, so, for example, earned respect in the tribe is you do things that are good for the tribe. Uh, who are the most famous people in human history?",
+    "[01:24] Uh, they're, uh, you know, they're, they're people who sort of transcended the self, the Buddhas and the Jesus's and the Muhammads of the world. Who else is famous? Uh, the artists are famous, you know, art lasts for a long time, the scientists are famous, they discover things, the conquerors are famous, presumably because they conquered for their tribe. There was someone that they were fighting for.",
+    '[01:43] So generally, the higher up you rise by doing things for greater and greater groups of people, even though it may be considered tyrannical or negative, like I, you know, Genghis Khan is famous, but, uh, to the Mongols, he was doing good, to the rest of them, not so much. Uh,',
+    "[02:08] The higher level you're operating at, the more people you're taking care of, the more you sort of earn respect and fame. And I think those are good reasons to be famous. If if fame is empty, if you're famous just because your name showed up in a lot of places or your face showed up in a lot of places, then that's a hollow fame. And I think deep down you will know that and so it'll be fragile and you'll always be afraid of losing it and then you'll be forced to perform.",
+    "[02:32] There's a challenge, I think, especially if people make very loud public proclamations about things. You mentioned there about, um, you're almost a hostage to the things that you used to say, that, um, being able to update your opinions and change your mind looks very similar to the Internet as hypocrisy does.",
+    "[02:53] You know, the difference between me saying something in the past and saying something different now is perhaps I've learned, perhaps I've updated my beliefs. But so few people do it in a legitimate way. I think that the Grifter shill, you see, this is the, the, the, the smoking gun that shows that he didn't really believe that thing all along.",
+    '[03:10] And, uh, yeah, I, I went to a retreat in LA a couple of years ago, and there was a guy that I used to follow, a big, um, business and productivity advice content creator, really, really successful, and he just totally stepped back from everything, went, uh, like monk mode and focused on his business. I asked him why, and he said, uh,',
+    '[03:29] I started feeling like I had to live up to in private the things that I was saying in public.',
+    "[03:34] Right. Yeah, it's a, it's a, what was it, the, uh, who said it was Mencken that a, um, foolish consistency is a hobgoblin of little minds, right? Um, but essentially, look, all life is all learning is error correction, right? Every knowledge creation system works through correcting errors, making guesses and correcting errors. So by definition, if you're learning, you're going to be wrong most of the time.",
+    "[03:55] And you're going to be updating your priors. And so, for example, I did this Joe Rogan podcast. I know it's like eight or nine years ago. Um, and people will call out like the one thing that didn't turn out to be correct, right? And it's just like, and they just beat on it because it, it helps them in their mind raise their status a little bit. Aha, I caught him in an error. Well, I think if you catch someone in a blatant lie where there's believe one thing and they say another, that's legitimate, that's a character flaw. They shouldn't be lying.",
+    "[04:21] But on the other hand, if they just made a guess at something and they got it wrong, and by the way, mostly it's about the AGI thing, and I think I'm still right about that. That's a different story. Um, people who think we have achieved AGI just failed a touring test from their side.",
+    "[04:35] But, uh, it's funny how people latch onto single proclamations, but the reality is all of us are dynamical systems. We're always changing, we're always learning, we're always growing, and, uh, hopefully we're correcting errors. What you don't want to be doing is lying in public so that because you're, you're trying to look good. And I think people can smell that.",
+    "[05:10] Uh, bullshit radars have become hyper-sensitized to try and work out whether or not this person means the thing that they're saying.",
+    '[05:18] Yeah. I mean, they they a lot of people are wrong. Most of us are wrong most of the time, especially in any new endeavor, any, you know, being wrong and disingenuous, though, purposefully wrong.',
+    "[05:27] Correct. Exactly. So I think I think that's the big difference. Is someone is wrong, no big deal, as long as they have a genuine reason for saying what they're saying or believing what they're believing. But if they are lying to elevate their status or their appearance or to live up to some expectation, that's the mistake, and that's a mistake not just for the listener, it's a mistake for themselves, because then you're going to get trapped in a hall of mirrors. You yourself are going to be consistent with your past proclamations. So if you're lying to others, you're going to be lying to yourself.",
+    "[05:51] Yeah, you're puppeted by a person that you are not even.",
+    "[05:54] That's right. Yeah. It's, it's like, what was that line? There's you're, you're basically trying to impress people who, you know, don't care about you.",
+    "[06:05] They don't like the real you, and if they saw the real you, they wouldn't care. And the people who would like the real you don't get to see the real you, so they pass you by.",
+    "[06:11] Right. You only want the respect of the very, very few people that you respect. Uh, trying to demand respect from the masses is a fool's errand. If you struggle to stay asleep because your body gets too hot or too cold, this is going to help. Just add an Eight Sleep Pod Four Ultra to your mattress like a fitted sheet, and it will automatically cool down or warm up each side of your bed up to 20 degrees. It's got integrated sensors that track your sleep time, your sleep phases, your HRV, your snoring, and your heart rate with 99% accuracy. And it even starts cooling or heating your bed an hour before you get into it. That is why Eight Sleep has been clinically proven to increase total sleep up to one hour every night. Best of all, they've got a 30-day sleep trial. So you can buy it and sleep on it for 29 nights, and if you don't like it, they will give you your money back. Plus, they ship internationally. Right now, you can get $350 off the Pod Four Ultra by going to the link in the description below or heading to EightSleep.com/modernwisdom and using the code modernwisdom at checkout. That's E I G H T S L E E P dot com slash modernwisdom and modernwisdom at checkout. Thank you very much for tuning in. If you enjoyed that clip with Naval, just a a mere taster, the full-length episode is available right here. Go on. Watch it. Play."
+  ]
+}
+Attempting to save to Firestore: {
+  videoId: 'IKNm08kJKEY',
+  youtubeTitle: '무너진 대학교육 (미네르바 대학교)',
+  youtubeDescription: 'Translated by M \n' +
+    '\n' +
+    'DISCLAIMER\n' +
+    '- The copyright of the original video belongs to the original copyright holder.\n' +
+    '- We check the copyright permission through the YouTube system, and if it is not confirmed within the system, we proceed with the translation work in the process of seeking permission through separate e-mails.\n' +
+    '- The Korean subtitles of the video were added within the scope of not distorting the contents of the original video in order to share the valuable video with more Korean viewers.\n' +
+    '- The purpose of this video is ONLY for the public good, such as education, motivation, or sharing of ideas with a wider public, and is not used for any additional purpose. In particular, there is NO revenue generated through YouTube AT ALL. \n' +
+    "- If you(copyright holder) request deletion, removal, correction, etc in any reasons caused by uploading the video, please contact us at 'businessnewsdaily@naver.com' and we will make corrections accordingly.",
+  thumbnailUrl: 'https://i.ytimg.com/vi/IKNm08kJKEY/hqdefault.jpg',
+  duration: 740,
+  timestamp: '2025-06-22T15:18:11.019Z',
+  analysis: {
+    summary: 'Naval Ravikant discusses fame, acknowledging its benefits like status and access, but highlighting its significant costs such as loss of privacy and the pressure to maintain an image. He distinguishes between earned fame from contributing positively to society and hollow fame pursued for its own sake, advocating for authenticity over perceived consistency.',
+    keywords: [
+      'pedestal',
+      'disingenuous',
+      'proclamations',
+      'tyrannical',
+      'priors'
+    ],
+    slang_expressions: [ [Object], [Object], [Object] ],
+    main_questions: [
+      'Is fame a worthwhile goal, and what are its inherent advantages and disadvantages?',
+      "How does public scrutiny impact an individual's ability to evolve their beliefs and maintain authenticity?"
+    ]
+  },
+  transcript_text: [
+    '[00:00] Is fame a worthwhile goal?',
+    "[00:03] Uh, it gets you invited to better parties. Gets you into better restaurants. Uh, fame. So fame is this funny thing where a lot of people know you but you don't know them. And, uh, it does get you put on a pedestal. Uh, it can get you what you want, uh, at a, at a distance. So I wouldn't say it's worthless. Obviously, people want it for a reason.",
+    "[00:26] Um, it's high status, so it attracts the opposite sex. Uh, especially for men, it attracts women. Uh, that said it is high cost. It means you have no privacy. Um, you do have weirdos and lunatics. Uh, you do get hit up a lot for weird things. Uh, and you're on a stage. So you're forced to perform. So you're forced to be consistent with your past proclamations and actions and you're going to have haters and all that nonsense.",
+    "[00:46] But the fact that we do it, the fact that we all seem to want it, means that it would be disingenuous to say, oh, no, no, I'm famous, but you don't want to be famous.",
+    "[01:10] Fame for fame's sake.",
+    "[01:12] Yeah, exactly. So it's better that it's earned fame. Uh, so, for example, earned respect in the tribe is you do things that are good for the tribe. Uh, who are the most famous people in human history?",
+    "[01:24] Uh, they're, uh, you know, they're, they're people who sort of transcended the self, the Buddhas and the Jesus's and the Muhammads of the world. Who else is famous? Uh, the artists are famous, you know, art lasts for a long time, the scientists are famous, they discover things, the conquerors are famous, presumably because they conquered for their tribe. There was someone that they were fighting for.",
+    '[01:43] So generally, the higher up you rise by doing things for greater and greater groups of people, even though it may be considered tyrannical or negative, like I, you know, Genghis Khan is famous, but, uh, to the Mongols, he was doing good, to the rest of them, not so much. Uh,',
+    "[02:08] The higher level you're operating at, the more people you're taking care of, the more you sort of earn respect and fame. And I think those are good reasons to be famous. If if fame is empty, if you're famous just because your name showed up in a lot of places or your face showed up in a lot of places, then that's a hollow fame. And I think deep down you will know that and so it'll be fragile and you'll always be afraid of losing it and then you'll be forced to perform.",
+    "[02:32] There's a challenge, I think, especially if people make very loud public proclamations about things. You mentioned there about, um, you're almost a hostage to the things that you used to say, that, um, being able to update your opinions and change your mind looks very similar to the Internet as hypocrisy does.",
+    "[02:53] You know, the difference between me saying something in the past and saying something different now is perhaps I've learned, perhaps I've updated my beliefs. But so few people do it in a legitimate way. I think that the Grifter shill, you see, this is the, the, the, the smoking gun that shows that he didn't really believe that thing all along.",
+    '[03:10] And, uh, yeah, I, I went to a retreat in LA a couple of years ago, and there was a guy that I used to follow, a big, um, business and productivity advice content creator, really, really successful, and he just totally stepped back from everything, went, uh, like monk mode and focused on his business. I asked him why, and he said, uh,',
+    '[03:29] I started feeling like I had to live up to in private the things that I was saying in public.',
+    "[03:34] Right. Yeah, it's a, it's a, what was it, the, uh, who said it was Mencken that a, um, foolish consistency is a hobgoblin of little minds, right? Um, but essentially, look, all life is all learning is error correction, right? Every knowledge creation system works through correcting errors, making guesses and correcting errors. So by definition, if you're learning, you're going to be wrong most of the time.",
+    "[03:55] And you're going to be updating your priors. And so, for example, I did this Joe Rogan podcast. I know it's like eight or nine years ago. Um, and people will call out like the one thing that didn't turn out to be correct, right? And it's just like, and they just beat on it because it, it helps them in their mind raise their status a little bit. Aha, I caught him in an error. Well, I think if you catch someone in a blatant lie where there's believe one thing and they say another, that's legitimate, that's a character flaw. They shouldn't be lying.",
+    "[04:21] But on the other hand, if they just made a guess at something and they got it wrong, and by the way, mostly it's about the AGI thing, and I think I'm still right about that. That's a different story. Um, people who think we have achieved AGI just failed a touring test from their side.",
+    "[04:35] But, uh, it's funny how people latch onto single proclamations, but the reality is all of us are dynamical systems. We're always changing, we're always learning, we're always growing, and, uh, hopefully we're correcting errors. What you don't want to be doing is lying in public so that because you're, you're trying to look good. And I think people can smell that.",
+    "[05:10] Uh, bullshit radars have become hyper-sensitized to try and work out whether or not this person means the thing that they're saying.",
+    '[05:18] Yeah. I mean, they they a lot of people are wrong. Most of us are wrong most of the time, especially in any new endeavor, any, you know, being wrong and disingenuous, though, purposefully wrong.',
+    "[05:27] Correct. Exactly. So I think I think that's the big difference. Is someone is wrong, no big deal, as long as they have a genuine reason for saying what they're saying or believing what they're believing. But if they are lying to elevate their status or their appearance or to live up to some expectation, that's the mistake, and that's a mistake not just for the listener, it's a mistake for themselves, because then you're going to get trapped in a hall of mirrors. You yourself are going to be consistent with your past proclamations. So if you're lying to others, you're going to be lying to yourself.",
+    "[05:51] Yeah, you're puppeted by a person that you are not even.",
+    "[05:54] That's right. Yeah. It's, it's like, what was that line? There's you're, you're basically trying to impress people who, you know, don't care about you.",
+    "[06:05] They don't like the real you, and if they saw the real you, they wouldn't care. And the people who would like the real you don't get to see the real you, so they pass you by.",
+    "[06:11] Right. You only want the respect of the very, very few people that you respect. Uh, trying to demand respect from the masses is a fool's errand. If you struggle to stay asleep because your body gets too hot or too cold, this is going to help. Just add an Eight Sleep Pod Four Ultra to your mattress like a fitted sheet, and it will automatically cool down or warm up each side of your bed up to 20 degrees. It's got integrated sensors that track your sleep time, your sleep phases, your HRV, your snoring, and your heart rate with 99% accuracy. And it even starts cooling or heating your bed an hour before you get into it. That is why Eight Sleep has been clinically proven to increase total sleep up to one hour every night. Best of all, they've got a 30-day sleep trial. So you can buy it and sleep on it for 29 nights, and if you don't like it, they will give you your money back. Plus, they ship internationally. Right now, you can get $350 off the Pod Four Ultra by going to the link in the description below or heading to EightSleep.com/modernwisdom and using the code modernwisdom at checkout. That's E I G H T S L E E P dot com slash modernwisdom and modernwisdom at checkout. Thank you very much for tuning in. If you enjoyed that clip with Naval, just a a mere taster, the full-length episode is available right here. Go on. Watch it. Play."
+  ]
+}
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/write-batch.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+file:///Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: TypeError [ERR_INVALID_ARG_TYPE]: The "payload" argument must be of type object. Received null
+Error registering video: Error: 5 NOT_FOUND: 
+    at POST (src/app/api/admin/register-video/route.ts:31:69)
+  29 |
+  30 |     console.log('Attempting to save to Firestore:', docData);
+> 31 |     await adminDb.collection('videoAnalyses').doc(videoData.videoId).set(docData);
+     |                                                                     ^
+  32 |     console.log('Successfully saved to Firestore');
+  33 |
+  34 |     return NextResponse.json({ success: true, videoId: videoData.videoId }); {
+  code: 5,
+  details: '',
+  metadata: [Metadata],
+  note: 'Exception occurred in retry method that was not classified as transient'
+}
+Error details: 5 NOT_FOUND: 
+Error stack: Error: 5 NOT_FOUND: 
+    at callErrorFromStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/call.js:32:19)
+    at Object.onReceiveStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client.js:193:76)
+    at Object.onReceiveStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client-interceptors.js:361:141)
+    at Object.onReceiveStatus (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client-interceptors.js:324:181)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/resolving-call.js:135:78
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+for call at
+    at ServiceClientImpl.makeUnaryRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/client.js:161:32)
+    at ServiceClientImpl.<anonymous> (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/node_modules/@grpc/grpc-js/build/src/make-client.js:105:19)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/v1/firestore_client.js:237:29
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/timeout.js:44:16
+    at repeat (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/retries.js:82:25)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/retries.js:125:13
+    at OngoingCallPromise.call (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/call.js:67:27)
+    at NormalApiCaller.call (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/normalCalls/normalApiCaller.js:34:19)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/google-gax/build/src/createApiCall.js:112:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Caused by: Error: 
+    at _firestore._traceUtil.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/write-batch.js:438:27)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:110:30
+    at NoopContextManager.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js:25:19)
+    at ContextAPI.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)
+    at NoopTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js:65:31)
+    at ProxyTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js:36:24)
+    at EnabledTraceUtil.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:102:28)
+    at WriteBatch.commit (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/write-batch.js:436:43)
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js:350:31
+    at /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:110:30
+    at NoopContextManager.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js:25:19)
+    at ContextAPI.with (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)
+    at NoopTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js:65:31)
+    at ProxyTracer.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js:36:24)
+    at EnabledTraceUtil.startActiveSpan (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:102:28)
+    at DocumentReference.set (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js:342:43)
+    at POST (webpack-internal:///(rsc)/./src/app/api/admin/register-video/route.ts:43:123)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.do (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:26:34112)
+    at async AppRouteRouteModule.handle (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:26:41338)
+    at async doRender (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:1518:42)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:1920:28)
+    at async DevServer.renderPageComponent (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:2408:24)
+    at async DevServer.renderToResponseImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:2445:32)
+    at async DevServer.pipeImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:1008:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/next-server.js:305:17)
+    at async DevServer.handleRequestImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/base-server.js:900:17)
+    at async /Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/dev/next-dev-server.js:371:20
+    at async Span.traceAsyncFn (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/dev/next-dev-server.js:368:24)
+    at async invokeRender (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/router-server.js:237:21)
+    at async handleRequest (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/router-server.js:428:24)
+    at async requestHandlerImpl (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/router-server.js:452:13)
+    at async Server.requestListener (/Users/yuhojeong/Desktop/dev/lincue-admin/node_modules/next/dist/server/lib/start-server.js:158:13)
+ POST /api/admin/register-video 500 in 275ms
+ ✓ Compiled in 277ms (1167 modules)
+ GET /admin/videos/new 200 in 40ms
+ ✓ Compiled in 68ms (593 modules)
+ GET /admin/videos/new 200 in 8ms
+ GET /admin/videos/new 200 in 115ms
+ ✓ Compiled in 306ms (1313 modules)
+ GET /admin/videos/new 200 in 33ms
+[?25h
