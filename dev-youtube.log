@@ -499,3 +499,356 @@ Using existing Firebase app...
  GET /admin/videos/new 200 in 53ms
  ✓ Compiled in 104ms (360 modules)
  GET /admin/videos/new 200 in 14ms
+ GET /api/admin/youtube-details?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D3D1hn3jLO6Q 200 in 302ms
+ ✓ Compiled in 191ms (360 modules)
+ GET /admin/videos/new 200 in 62ms
+ ✓ Compiled /api/admin/register-video in 146ms (543 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+Received video data: {
+  videoId: '3D1hn3jLO6Q',
+  title: "10 Things JENNIE Can't Live Without | 10 Essentials",
+  description: 'BLACKPINK’s Jennie Kim joins GQ to reveal her 10 Essentials. The South Korean singer breaks down her daily essentials: from her journal (“I look back at it to get inspired”) to her bruise cream (“I’m bruised up basically everywhere on my body”). Watch the full episode of GQ’s 10 Essentials, as Jennie Kim reveals 10 things she can’t live without.\r\n' +
+    '\r\n' +
+    '#JENNIE #BLACKPINK #JennieKim #GQ\r\n' +
+    '\r\n' +
+    '00:00 - Jennie Kim’s 10 Essentials\r\n' +
+    '00:23 - Vocal essentials\r\n' +
+    '01:24 - Journal\r\n' +
+    '02:31 - Camera\r\n' +
+    '03:37 - Jewelry\r\n' +
+    '04:30 - Bruise cream\r\n' +
+    '05:06 - Shower filter\r\n' +
+    '05:40 - Heated eye mask\r\n' +
+    '06:35 - Yoga ring & massage ball\r\n' +
+    '07:20 - Travel essentials\r\n' +
+    '07:57 - Snack\r\n' +
+    '\r\n' +
+    'GQ recommends:\r\n' +
+    'https://www.youtube.com/watch?v=UGrTMEDAn7I\r\n' +
+    'https://www.youtube.com/watch?v=HZs1a6n0q7c\r\n' +
+    'https://www.youtube.com/watch?v=VYoPLFT539w\r\n' +
+    '\r\n' +
+    'Watch more from GQ | 10 Essentials: \r\n' +
+    'https://www.youtube.com/playlist?list=PL0hKMB1-xkc8t5sXk1arVDl-TQslbTdEm\r\n' +
+    '\r\n' +
+    'Watch more from GQ: \r\n' +
+    'https://www.youtube.com/watch?v=JMQTMGEW4Zc\r\n' +
+    'https://www.youtube.com/watch?v=qaxWw-rL7oU\r\n' +
+    'https://www.youtube.com/watch?v=XcCYw-LtKu8\r\n' +
+    '\r\n' +
+    '----------\r\n' +
+    '\r\n' +
+    'Director: Kristen DeVore\r\n' +
+    'Director of Photography: Ricardo Pomares\r\n' +
+    'Editor: Louville Moore\r\n' +
+    'Talent: Jennie Kim\r\n' +
+    'Producer: Sam Dennis\r\n' +
+    'Line Producer: Jen Santos\r\n' +
+    'Production Manager: James Pipitone\r\n' +
+    'Production Coordinator: Elizabeth Hymes\r\n' +
+    'Talent Booker: Lauren Mendoza\r\n' +
+    'Camera Operator: Jon Corum\r\n' +
+    'Sound Mixer: Gloria Hernandez\r\n' +
+    'Production Assistant: Hollie Ortiz; Brock Spitaels\r\n' +
+    'Director, Post Production: Nicholas Ascanio\r\n' +
+    'Post Production Coordinator: Rachel Kim\r\n' +
+    'Supervising Editor: Rob Lombardi\r\n' +
+    'Additional Editor: Jess Lane\r\n' +
+    'Assistant Editor: Billy Ward\n' +
+    '\n' +
+    'Still haven’t subscribed to GQ on YouTube? ►► http://bit.ly/2iij5wt\r\n' +
+    'Subscribe to GQ magazine and get rare swag: https://bit.ly/2xNBH3i\r\n' +
+    "Join the GQ Discord to talk men's fashion, watches, and more: https://discord.gg/gqmagazine\r\n" +
+    '\r\n' +
+    'ABOUT GQ\r\n' +
+    'For more than 50 years, GQ has been the premier men’s magazine, providing definitive coverage of style, culture, politics and more. In that tradition, GQ’s video channel covers every part of a man’s life, from entertainment and sports to fashion and grooming advice. Welcome to the modern guide to style advice, dating tips, celebrity videos, music, sports and more.\r\n' +
+    '\r\n' +
+    'https://www.youtube.com/user/GQVideos',
+  thumbnailUrl: 'https://i.ytimg.com/vi/3D1hn3jLO6Q/hqdefault.jpg',
+  duration: 549,
+  analysis: {
+    summary: 'Jennie Kim from Blackpink reveals her personal and travel essentials, ranging from vocal care items and a cherished journal to photography gear, comfort tools, and her favorite snacks. She explains the significance and practical uses of each item in supporting her demanding life as a global artist.',
+    keywords: [
+      'Pastilles',
+      'Inhaler',
+      'Bruised',
+      'De-puff',
+      'Self-explanatory'
+    ],
+    slang_expressions: [ [Object], [Object], [Object], [Object] ],
+    main_questions: [
+      'What specific items does Jennie use to maintain her vocal health and how do they benefit her?',
+      'How does Jennie balance her professional needs (like recording music and performing) with her personal well-being while traveling?'
+    ]
+  },
+  transcript_text: '[00:00] Mmm.\n' +
+    '[00:01] So good.\n' +
+    "[00:04] I'm actually gonna finish this, but I'll stop. My last one.\n" +
+    '[00:16] Hi GQ, this is Jennie, and these are my essentials.\n' +
+    '[00:24] These are my vocal essentials.\n' +
+    "[00:27] Grether's Pastilles for throat and voice.\n" +
+    "[00:30] Hydrates your throat, so I like to just have this instead of gum so much when I'm in my recording season.\n" +
+    "[00:37] This tastes like blackberry. It's not too sweet, and it's a good replacement of candy.\n" +
+    '[00:44] And this little guy here is my steam inhaler.\n' +
+    '[00:50] Oh, I love this device by the way.\n' +
+    "[00:52] When I'm feeling super tired after my sessions.\n" +
+    '[00:57] You rip this little guy and then you fill it up at the back.\n' +
+    '[01:02] You turn it on and you put it in your mouth like this. And you just breathe.\n' +
+    "[01:06] I think the key is to do it constantly. There's no immediate feeling better afterwards.\n" +
+    '[01:13] Before this album, I wanted to make sure that my throat was in a good condition.\n' +
+    '[01:19] You know, like I said, I like to be cautious about my body.\n' +
+    '[01:28] We get like special effect around my diary. This is my journal that I carry with me.\n' +
+    '[01:36] I bought this in Paris at a museum I was in, I think.\n' +
+    "[01:42] I basically like to write down everything that's going on in my head.\n" +
+    '[01:46] Working on my album, I could not go anywhere without it because it had all my ideas and thoughts and all the secret.\n' +
+    '[01:55] I look back at it to get inspired sometimes.\n' +
+    "[02:00] I clear my mind by writing them down, but the problem is I sometimes don't know what I'm trying to say because I'm trying to write down so many things at once.\n" +
+    "[02:10] And then I look back and I try to organize something that I made a comment about my music, and I'm like, what, what did I want to change?\n" +
+    "[02:18] It helps sometimes, but sometimes it makes it even harder 'cause I have to figure out my own code.\n" +
+    "[02:23] Is there any page that's not too personal that you could show us?\n" +
+    '[02:24] Oh my goodness, no. OFF LIMITS. I cannot have anyone read this about me.\n' +
+    "[02:32] This is a newer camera of mine. I'm trying to be more active with this one.\n" +
+    '[02:39] I was just in Paris and London before I came here, so I had this guy around me all the time.\n' +
+    '[02:46] Some sort of just documenting my way to my album, and if possible in the future, I want to share it with my fans.\n' +
+    '[02:54] I definitely like to photograph a little bit of everything.\n' +
+    "[02:57] I have my team take photos of me while I'm working, or if I have the time, I would go on a walk or I, I like taking photos of the landscape.\n" +
+    "[03:09] Skyes, and trees, and just capture whichever city that I'm in.\n" +
+    "[03:14] I actually haven't had the time to look back at all the photos just because I was traveling so much.\n" +
+    "[03:20] But I'm excited to check the ones from Paris because there was a moment where I was walking out from the Chanel show and a lot of fans were waiting for me outside, so I wanted to kinda capture that moment.\n" +
+    "[03:34] And I did, so I'm excited to check on that one.\n" +
+    '[03:39] This is so important to me. This little pouch that I carry is my collection of my Chanel jewelry and my Coco Crushes.\n' +
+    '[03:53] If you see, I have different sizes and different rings and watches here.\n' +
+    "[04:00] But I like to style myself with different items depending on what I'm wearing that day.\n" +
+    '[04:05] And then I bought this cute little bag to go with it.\n' +
+    '[04:08] Now I look for my pouch everywhere I go.\n' +
+    "[04:12] And I'm wearing some from the bag today.\n" +
+    '[04:15] I create different combinations. These two are my favorite ones right now.\n' +
+    '[04:20] I got this for my birthday last year.\n' +
+    '[04:22] I like how this ring sparkles up my whole outfit every time I put it on.\n' +
+    '[04:27] It just gives that extra shine.\n' +
+    "[04:31] This has become an important essential of mine now that I'm working towards my album and my shows.\n" +
+    "[04:39] This is a bruise cream. I'm bruised up basically everywhere on my body, especially my legs, my knees.\n" +
+    '[04:51] Not only from the rehearsals, though, I tend to walk into things a lot.\n' +
+    '[04:56] Someone from my team got it for me when they saw my legs after a brutal shoot that we had.\n' +
+    "[05:00] They're like, here's a little something to help you with that.\n" +
+    '[05:07] This also is such an important travel essential. This is a shower filter.\n' +
+    "[05:13] I just want to be careful, especially if you're traveling around different cities at once, just make sure my skin isn't getting any irritation from just, you know, anything, so I like to use a filter to shower head.\n" +
+    '[05:27] It helps. This is the current one that I have.\n' +
+    '[05:33] I think this is a Korean brand. AtoJet.\n' +
+    "[05:35] There are some hotels that don't fit this filter, but 95% of the time it fits, so I'm good.\n" +
+    '[05:41] This essential is a sleeping eye mask. This is a Japanese brand.\n' +
+    '[05:49] And when you open this up, it starts heating up, and it gives you this nice warm feeling in your eyes.\n' +
+    '[05:58] And I always like to use it on the plane. And then I would actually have an earplug and a mask too.\n' +
+    '[06:05] So if you see me on a plane, I look crazy, but it helps to go to bed.\n' +
+    "[06:10] But the thing is, this is a very important tip for you guys. If you open it, I don't know what the system is and how it works, but it starts heating up, so you can't reuse it.\n" +
+    '[06:20] So make sure to open this right before you want to put it on your eyes.\n' +
+    '[06:26] And then you just rip this out, and voilà!\n' +
+    '[06:37] These are a super important essential of mine.\n' +
+    '[06:41] I did not like to travel without them.\n' +
+    '[06:43] This one is obviously a massage ball that I pretty much use it for everywhere on my body.\n' +
+    "[06:50] I like to step on them when I'm brushing my teeth and just roll it around until it doesn't hurt.\n" +
+    '[06:56] So I usually carry two of these, and then I would put them in my calves.\n' +
+    '[07:02] And I walk around in my house, and it helps to kinda just loosen up the muscles and depuff your calves.\n' +
+    '[07:09] Yeah, I cannot travel without them, especially on the plane.\n' +
+    '[07:12] Get sore backs, and sore shoulders, and everything, so I kinda just like roll around with my ball in the seat.\n' +
+    '[07:21] These are my traveling essentials.\n' +
+    '[07:25] I would not travel without my glasses, my sunglasses, and some sort of a hat because my hair gets really messy after a flight.\n' +
+    '[07:35] I have really bad eyesight, so I need my reading glasses everywhere I go.\n' +
+    '[07:40] This one I bought in London, I remember.\n' +
+    '[07:45] Oh, and this one is a collection from the collaboration that I did with Gentle Monster.\n' +
+    "[07:51] It's called 'Je ne sais quoi de Nini'.\n" +
+    "[07:54] It's French and I cannot pronounce it, but I wanted to name it that way.\n" +
+    '[08:00] My next essentials are my snacks.\n' +
+    "[08:05] I think it's very self-explanatory what they are, so I'm such a big fan of salt and vinegar. I don't know if everyone is, but me growing up in New Zealand, this was my favorite thing to eat, so...\n" +
+    "[08:19] It's still is.\n" +
+    "[08:21] They're different category snacks for me.\n" +
+    '[08:24] This one, if I want to keep things light or in the morning, just...\n' +
+    "[08:30] I think I should eat one. Yeah, people think it's crazy of me to eat this so much. It tastes like baby food.\n" +
+    "[08:40] But the thing is like, no added sugar, no artificial preservatives. Nothing, you know, it's healthy.\n" +
+    '[08:48] So I like to eat like a baby, I guess.\n' +
+    '[08:52] Mmm.\n' +
+    '[08:54] So good.\n' +
+    "[08:57] I'm actually gonna finish this, but I'll stop. My last one.\n" +
+    '[09:04] Thanks GQ, bye.\n'
+}
+Attempting to save to Firestore: {
+  videoId: '3D1hn3jLO6Q',
+  youtubeTitle: "10 Things JENNIE Can't Live Without | 10 Essentials",
+  youtubeDescription: 'BLACKPINK’s Jennie Kim joins GQ to reveal her 10 Essentials. The South Korean singer breaks down her daily essentials: from her journal (“I look back at it to get inspired”) to her bruise cream (“I’m bruised up basically everywhere on my body”). Watch the full episode of GQ’s 10 Essentials, as Jennie Kim reveals 10 things she can’t live without.\r\n' +
+    '\r\n' +
+    '#JENNIE #BLACKPINK #JennieKim #GQ\r\n' +
+    '\r\n' +
+    '00:00 - Jennie Kim’s 10 Essentials\r\n' +
+    '00:23 - Vocal essentials\r\n' +
+    '01:24 - Journal\r\n' +
+    '02:31 - Camera\r\n' +
+    '03:37 - Jewelry\r\n' +
+    '04:30 - Bruise cream\r\n' +
+    '05:06 - Shower filter\r\n' +
+    '05:40 - Heated eye mask\r\n' +
+    '06:35 - Yoga ring & massage ball\r\n' +
+    '07:20 - Travel essentials\r\n' +
+    '07:57 - Snack\r\n' +
+    '\r\n' +
+    'GQ recommends:\r\n' +
+    'https://www.youtube.com/watch?v=UGrTMEDAn7I\r\n' +
+    'https://www.youtube.com/watch?v=HZs1a6n0q7c\r\n' +
+    'https://www.youtube.com/watch?v=VYoPLFT539w\r\n' +
+    '\r\n' +
+    'Watch more from GQ | 10 Essentials: \r\n' +
+    'https://www.youtube.com/playlist?list=PL0hKMB1-xkc8t5sXk1arVDl-TQslbTdEm\r\n' +
+    '\r\n' +
+    'Watch more from GQ: \r\n' +
+    'https://www.youtube.com/watch?v=JMQTMGEW4Zc\r\n' +
+    'https://www.youtube.com/watch?v=qaxWw-rL7oU\r\n' +
+    'https://www.youtube.com/watch?v=XcCYw-LtKu8\r\n' +
+    '\r\n' +
+    '----------\r\n' +
+    '\r\n' +
+    'Director: Kristen DeVore\r\n' +
+    'Director of Photography: Ricardo Pomares\r\n' +
+    'Editor: Louville Moore\r\n' +
+    'Talent: Jennie Kim\r\n' +
+    'Producer: Sam Dennis\r\n' +
+    'Line Producer: Jen Santos\r\n' +
+    'Production Manager: James Pipitone\r\n' +
+    'Production Coordinator: Elizabeth Hymes\r\n' +
+    'Talent Booker: Lauren Mendoza\r\n' +
+    'Camera Operator: Jon Corum\r\n' +
+    'Sound Mixer: Gloria Hernandez\r\n' +
+    'Production Assistant: Hollie Ortiz; Brock Spitaels\r\n' +
+    'Director, Post Production: Nicholas Ascanio\r\n' +
+    'Post Production Coordinator: Rachel Kim\r\n' +
+    'Supervising Editor: Rob Lombardi\r\n' +
+    'Additional Editor: Jess Lane\r\n' +
+    'Assistant Editor: Billy Ward\n' +
+    '\n' +
+    'Still haven’t subscribed to GQ on YouTube? ►► http://bit.ly/2iij5wt\r\n' +
+    'Subscribe to GQ magazine and get rare swag: https://bit.ly/2xNBH3i\r\n' +
+    "Join the GQ Discord to talk men's fashion, watches, and more: https://discord.gg/gqmagazine\r\n" +
+    '\r\n' +
+    'ABOUT GQ\r\n' +
+    'For more than 50 years, GQ has been the premier men’s magazine, providing definitive coverage of style, culture, politics and more. In that tradition, GQ’s video channel covers every part of a man’s life, from entertainment and sports to fashion and grooming advice. Welcome to the modern guide to style advice, dating tips, celebrity videos, music, sports and more.\r\n' +
+    '\r\n' +
+    'https://www.youtube.com/user/GQVideos',
+  thumbnailUrl: 'https://i.ytimg.com/vi/3D1hn3jLO6Q/hqdefault.jpg',
+  duration: 549,
+  timestamp: '2025-06-22T15:50:31.396Z',
+  analysis: {
+    summary: 'Jennie Kim from Blackpink reveals her personal and travel essentials, ranging from vocal care items and a cherished journal to photography gear, comfort tools, and her favorite snacks. She explains the significance and practical uses of each item in supporting her demanding life as a global artist.',
+    keywords: [
+      'Pastilles',
+      'Inhaler',
+      'Bruised',
+      'De-puff',
+      'Self-explanatory'
+    ],
+    slang_expressions: [ [Object], [Object], [Object], [Object] ],
+    main_questions: [
+      'What specific items does Jennie use to maintain her vocal health and how do they benefit her?',
+      'How does Jennie balance her professional needs (like recording music and performing) with her personal well-being while traveling?'
+    ]
+  },
+  transcript_text: '[00:00] Mmm.\n' +
+    '[00:01] So good.\n' +
+    "[00:04] I'm actually gonna finish this, but I'll stop. My last one.\n" +
+    '[00:16] Hi GQ, this is Jennie, and these are my essentials.\n' +
+    '[00:24] These are my vocal essentials.\n' +
+    "[00:27] Grether's Pastilles for throat and voice.\n" +
+    "[00:30] Hydrates your throat, so I like to just have this instead of gum so much when I'm in my recording season.\n" +
+    "[00:37] This tastes like blackberry. It's not too sweet, and it's a good replacement of candy.\n" +
+    '[00:44] And this little guy here is my steam inhaler.\n' +
+    '[00:50] Oh, I love this device by the way.\n' +
+    "[00:52] When I'm feeling super tired after my sessions.\n" +
+    '[00:57] You rip this little guy and then you fill it up at the back.\n' +
+    '[01:02] You turn it on and you put it in your mouth like this. And you just breathe.\n' +
+    "[01:06] I think the key is to do it constantly. There's no immediate feeling better afterwards.\n" +
+    '[01:13] Before this album, I wanted to make sure that my throat was in a good condition.\n' +
+    '[01:19] You know, like I said, I like to be cautious about my body.\n' +
+    '[01:28] We get like special effect around my diary. This is my journal that I carry with me.\n' +
+    '[01:36] I bought this in Paris at a museum I was in, I think.\n' +
+    "[01:42] I basically like to write down everything that's going on in my head.\n" +
+    '[01:46] Working on my album, I could not go anywhere without it because it had all my ideas and thoughts and all the secret.\n' +
+    '[01:55] I look back at it to get inspired sometimes.\n' +
+    "[02:00] I clear my mind by writing them down, but the problem is I sometimes don't know what I'm trying to say because I'm trying to write down so many things at once.\n" +
+    "[02:10] And then I look back and I try to organize something that I made a comment about my music, and I'm like, what, what did I want to change?\n" +
+    "[02:18] It helps sometimes, but sometimes it makes it even harder 'cause I have to figure out my own code.\n" +
+    "[02:23] Is there any page that's not too personal that you could show us?\n" +
+    '[02:24] Oh my goodness, no. OFF LIMITS. I cannot have anyone read this about me.\n' +
+    "[02:32] This is a newer camera of mine. I'm trying to be more active with this one.\n" +
+    '[02:39] I was just in Paris and London before I came here, so I had this guy around me all the time.\n' +
+    '[02:46] Some sort of just documenting my way to my album, and if possible in the future, I want to share it with my fans.\n' +
+    '[02:54] I definitely like to photograph a little bit of everything.\n' +
+    "[02:57] I have my team take photos of me while I'm working, or if I have the time, I would go on a walk or I, I like taking photos of the landscape.\n" +
+    "[03:09] Skyes, and trees, and just capture whichever city that I'm in.\n" +
+    "[03:14] I actually haven't had the time to look back at all the photos just because I was traveling so much.\n" +
+    "[03:20] But I'm excited to check the ones from Paris because there was a moment where I was walking out from the Chanel show and a lot of fans were waiting for me outside, so I wanted to kinda capture that moment.\n" +
+    "[03:34] And I did, so I'm excited to check on that one.\n" +
+    '[03:39] This is so important to me. This little pouch that I carry is my collection of my Chanel jewelry and my Coco Crushes.\n' +
+    '[03:53] If you see, I have different sizes and different rings and watches here.\n' +
+    "[04:00] But I like to style myself with different items depending on what I'm wearing that day.\n" +
+    '[04:05] And then I bought this cute little bag to go with it.\n' +
+    '[04:08] Now I look for my pouch everywhere I go.\n' +
+    "[04:12] And I'm wearing some from the bag today.\n" +
+    '[04:15] I create different combinations. These two are my favorite ones right now.\n' +
+    '[04:20] I got this for my birthday last year.\n' +
+    '[04:22] I like how this ring sparkles up my whole outfit every time I put it on.\n' +
+    '[04:27] It just gives that extra shine.\n' +
+    "[04:31] This has become an important essential of mine now that I'm working towards my album and my shows.\n" +
+    "[04:39] This is a bruise cream. I'm bruised up basically everywhere on my body, especially my legs, my knees.\n" +
+    '[04:51] Not only from the rehearsals, though, I tend to walk into things a lot.\n' +
+    '[04:56] Someone from my team got it for me when they saw my legs after a brutal shoot that we had.\n' +
+    "[05:00] They're like, here's a little something to help you with that.\n" +
+    '[05:07] This also is such an important travel essential. This is a shower filter.\n' +
+    "[05:13] I just want to be careful, especially if you're traveling around different cities at once, just make sure my skin isn't getting any irritation from just, you know, anything, so I like to use a filter to shower head.\n" +
+    '[05:27] It helps. This is the current one that I have.\n' +
+    '[05:33] I think this is a Korean brand. AtoJet.\n' +
+    "[05:35] There are some hotels that don't fit this filter, but 95% of the time it fits, so I'm good.\n" +
+    '[05:41] This essential is a sleeping eye mask. This is a Japanese brand.\n' +
+    '[05:49] And when you open this up, it starts heating up, and it gives you this nice warm feeling in your eyes.\n' +
+    '[05:58] And I always like to use it on the plane. And then I would actually have an earplug and a mask too.\n' +
+    '[06:05] So if you see me on a plane, I look crazy, but it helps to go to bed.\n' +
+    "[06:10] But the thing is, this is a very important tip for you guys. If you open it, I don't know what the system is and how it works, but it starts heating up, so you can't reuse it.\n" +
+    '[06:20] So make sure to open this right before you want to put it on your eyes.\n' +
+    '[06:26] And then you just rip this out, and voilà!\n' +
+    '[06:37] These are a super important essential of mine.\n' +
+    '[06:41] I did not like to travel without them.\n' +
+    '[06:43] This one is obviously a massage ball that I pretty much use it for everywhere on my body.\n' +
+    "[06:50] I like to step on them when I'm brushing my teeth and just roll it around until it doesn't hurt.\n" +
+    '[06:56] So I usually carry two of these, and then I would put them in my calves.\n' +
+    '[07:02] And I walk around in my house, and it helps to kinda just loosen up the muscles and depuff your calves.\n' +
+    '[07:09] Yeah, I cannot travel without them, especially on the plane.\n' +
+    '[07:12] Get sore backs, and sore shoulders, and everything, so I kinda just like roll around with my ball in the seat.\n' +
+    '[07:21] These are my traveling essentials.\n' +
+    '[07:25] I would not travel without my glasses, my sunglasses, and some sort of a hat because my hair gets really messy after a flight.\n' +
+    '[07:35] I have really bad eyesight, so I need my reading glasses everywhere I go.\n' +
+    '[07:40] This one I bought in London, I remember.\n' +
+    '[07:45] Oh, and this one is a collection from the collaboration that I did with Gentle Monster.\n' +
+    "[07:51] It's called 'Je ne sais quoi de Nini'.\n" +
+    "[07:54] It's French and I cannot pronounce it, but I wanted to name it that way.\n" +
+    '[08:00] My next essentials are my snacks.\n' +
+    "[08:05] I think it's very self-explanatory what they are, so I'm such a big fan of salt and vinegar. I don't know if everyone is, but me growing up in New Zealand, this was my favorite thing to eat, so...\n" +
+    "[08:19] It's still is.\n" +
+    "[08:21] They're different category snacks for me.\n" +
+    '[08:24] This one, if I want to keep things light or in the morning, just...\n' +
+    "[08:30] I think I should eat one. Yeah, people think it's crazy of me to eat this so much. It tastes like baby food.\n" +
+    "[08:40] But the thing is like, no added sugar, no artificial preservatives. Nothing, you know, it's healthy.\n" +
+    '[08:48] So I like to eat like a baby, I guess.\n' +
+    '[08:52] Mmm.\n' +
+    '[08:54] So good.\n' +
+    "[08:57] I'm actually gonna finish this, but I'll stop. My last one.\n" +
+    '[09:04] Thanks GQ, bye.\n'
+}
+Successfully saved to Firestore
+ POST /api/admin/register-video 200 in 315ms
+ GET /admin/videos 200 in 41ms
+ ✓ Compiled /api/admin/videos in 80ms (545 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /api/admin/videos 200 in 172ms
+ GET /api/admin/videos 200 in 74ms
+ ✓ Compiled in 75ms (360 modules)
+ GET /admin/videos 200 in 29ms

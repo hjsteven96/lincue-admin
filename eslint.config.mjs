@@ -16,6 +16,7 @@ const eslintConfig = [
             "no-unused-vars": "warn",
             "no-console": "warn",
             "react/no-unescaped-entities": "off",
+            "@typescript-eslint/no-explicit-any": "off",
             // 필요에 따라 여기에 다른 규칙을 추가하거나 재정의할 수 있습니다.
         },
     },
