@@ -1,5 +1,5 @@
 import { initializeApp, getApps, cert } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
+import { getFirestore, Firestore } from "firebase-admin/firestore";
 
 console.log("Initializing Firebase Admin...");
 console.log("Environment check:", {
@@ -8,7 +8,7 @@ console.log("Environment check:", {
     clientEmail: !!process.env.FIREBASE_ADMIN_CLIENT_EMAIL,
 });
 
-let adminDb: any = null;
+let adminDb: Firestore | null = null;
 
 try {
     if (!getApps().length) {
@@ -28,11 +28,13 @@ try {
         console.log("Firebase app created successfully");
 
         // Initialize Firestore with specific database
-        adminDb = getFirestore(app, 'youtube-english');
-        console.log("Firestore initialized successfully with youtube-english database");
+        adminDb = getFirestore(app, "youtube-english");
+        console.log(
+            "Firestore initialized successfully with youtube-english database"
+        );
     } else {
         console.log("Using existing Firebase app...");
-        adminDb = getFirestore(getApps()[0], 'youtube-english');
+        adminDb = getFirestore(getApps()[0], "youtube-english");
     }
 } catch (error) {
     console.error("Firebase Admin initialization failed:", error);
