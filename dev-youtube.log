@@ -862,3 +862,41 @@ Using existing Firebase app...
  ✓ Compiled in 181ms (360 modules)
  ✓ Compiled in 128ms (360 modules)
  ✓ Compiled in 119ms (360 modules)
+ ✓ Compiled /admin in 409ms (870 modules)
+ GET /admin 200 in 518ms
+ GET /admin 200 in 130ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1399ms (877 modules)
+ GET /login 200 in 1744ms
+ GET /login 200 in 58ms
+ ○ Compiling /api/auth/login ...
+ ✓ Compiled /api/auth/login in 503ms (891 modules)
+ POST /api/auth/login 200 in 607ms
+ GET /admin 200 in 48ms
+ GET /admin/users 200 in 18ms
+ ✓ Compiled /_not-found in 320ms (895 modules)
+ GET /_next/static/chunks/app/admin/users/page.js 404 in 417ms
+ GET /admin/users 200 in 112ms
+ GET /_next/static/chunks/app/admin/users/page.js 404 in 30ms
+ ✓ Compiled /favicon.ico in 258ms (545 modules)
+ GET /favicon.ico 200 in 302ms
+ GET /admin/users 200 in 110ms
+ GET /_next/static/chunks/app/admin/users/page.js 404 in 31ms
+ GET /admin 200 in 62ms
+ GET /admin/videos 200 in 24ms
+ ✓ Compiled /api/admin/videos in 254ms (551 modules)
+Initializing Firebase Admin...
+Environment check: { projectId: true, privateKey: true, clientEmail: true }
+Using existing Firebase app...
+ GET /admin/videos 200 in 44ms
+ GET /api/admin/videos 200 in 489ms
+ GET /api/admin/videos 200 in 87ms
+ GET /admin/users 200 in 22ms
+ GET /_next/static/chunks/app/admin/users/page.js 404 in 39ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 634ms (914 modules)
+ GET /admin/users 200 in 651ms
+ GET /_next/static/chunks/app/admin/users/page.js 404 in 31ms
+ GET /favicon.ico 200 in 82ms
+ ✓ Compiled in 187ms (366 modules)
+ ✓ Compiled in 190ms (366 modules)
