@@ -900,3 +900,37 @@ Using existing Firebase app...
  GET /favicon.ico 200 in 82ms
  ✓ Compiled in 187ms (366 modules)
  ✓ Compiled in 190ms (366 modules)
+ GET /admin 200 in 58ms
+ ✓ Compiled in 172ms (363 modules)
+ ✓ Compiled in 84ms (363 modules)
+ ✓ Compiled in 50ms (363 modules)
+ ✓ Compiled /_not-found in 445ms (876 modules)
+ GET /login 404 in 614ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/yuhojeong/Desktop/dev/lincue-admin/.next/server/app/login/page.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuhojeong/Desktop/dev/lincue-admin/.next/server/app/login/page.js',
+  page: '/login'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 880ms (1207 modules)
+ GET /login 500 in 1380ms
+ GET /login 200 in 128ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 532ms (1211 modules)
+ GET /_next/static/chunks/app/login/page.js 404 in 629ms
+ GET /login 200 in 98ms
+ GET /_next/static/chunks/app/login/page.js 404 in 41ms
+ ✓ Compiled in 363ms (610 modules)
+ ✓ Compiled in 101ms (610 modules)
+ ✓ Compiled in 92ms (610 modules)
+ ✓ Compiled in 93ms (610 modules)
+ ✓ Compiled in 89ms (610 modules)
+ ✓ Compiled in 88ms (610 modules)
+ ✓ Compiled in 89ms (610 modules)
+ ✓ Compiled in 97ms (610 modules)
+ ✓ Compiled in 91ms (610 modules)
+ ✓ Compiled in 94ms (610 modules)
+ ✓ Compiled in 111ms (610 modules)
+ ✓ Compiled in 91ms (610 modules)
