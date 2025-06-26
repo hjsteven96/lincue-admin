@@ -934,3 +934,22 @@ Using existing Firebase app...
  ✓ Compiled in 94ms (610 modules)
  ✓ Compiled in 111ms (610 modules)
  ✓ Compiled in 91ms (610 modules)
+ GET /login 200 in 84ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 715ms (1211 modules)
+ GET /_next/static/chunks/app/login/page.js 404 in 863ms
+ GET /login?email=admin&password=1234 200 in 60ms
+ GET /_next/static/chunks/app/login/page.js 404 in 28ms
+ GET /login?email=admin&password=1234 200 in 46ms
+ GET /_next/static/chunks/app/login/page.js 404 in 29ms
+ ✓ Compiled in 412ms (610 modules)
+ ✓ Compiled in 130ms (610 modules)
+ ✓ Compiled in 103ms (610 modules)
+ ✓ Compiled in 98ms (610 modules)
+ GET /login 200 in 48ms
+ ✓ Compiled /_not-found in 334ms (1211 modules)
+ GET /_next/static/chunks/app/login/page.js 404 in 431ms
+ GET /login?email=admin&password=1234 200 in 99ms
+ GET /_next/static/chunks/app/login/page.js 404 in 34ms
+ GET /login?email=admin&password=1234 200 in 53ms
+ GET /_next/static/chunks/app/login/page.js 404 in 33ms

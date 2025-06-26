@@ -17,7 +17,31 @@ export default function NewVideoPage() {
     const [youtubeDetails, setYoutubeDetails] = useState<YouTubeDetails | null>(
         null
     );
-    const [analysisData, setAnalysisData] = useState("");
+    const [analysisData, setAnalysisData] = useState(
+        JSON.stringify(
+            {
+                analysis: {
+                    summary: "여기에 영상 내용 요약 (1-2 문장)을 입력하세요.",
+                    keywords: [
+                        "키워드1",
+                        "키워드2",
+                        "키워드3",
+                        "키워드4",
+                        "키워드5",
+                    ],
+                    slang_expressions: [
+                        { expression: "슬랭표현1", meaning: "의미1" },
+                        { expression: "슬랭표현2", meaning: "의미2" },
+                    ],
+                    main_questions: ["주요 질문1", "주요 질문2"],
+                },
+                transcript_text:
+                    "[00:00] 영상 스크립트가 타임스탬프와 함께 여기에 들어갑니다.\n[00:15] 새로운 스피커 또는 주제 변경 시 새로운 세그먼트를 시작합니다.\n[00:30] 각 세그먼트는 90초를 넘지 않도록 짧게 유지합니다.",
+            },
+            null,
+            2
+        )
+    );
     const [loading, setLoading] = useState(false);
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState("");
