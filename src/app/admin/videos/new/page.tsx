@@ -17,31 +17,51 @@ export default function NewVideoPage() {
     const [youtubeDetails, setYoutubeDetails] = useState<YouTubeDetails | null>(
         null
     );
-    const [analysisData, setAnalysisData] = useState(
-        JSON.stringify(
-            {
-                analysis: {
-                    summary: "여기에 영상 내용 요약 (1-2 문장)을 입력하세요.",
-                    keywords: [
-                        "키워드1",
-                        "키워드2",
-                        "키워드3",
-                        "키워드4",
-                        "키워드5",
-                    ],
-                    slang_expressions: [
-                        { expression: "슬랭표현1", meaning: "의미1" },
-                        { expression: "슬랭표현2", meaning: "의미2" },
-                    ],
-                    main_questions: ["주요 질문1", "주요 질문2"],
-                },
-                transcript_text:
-                    "[00:00] 영상 스크립트가 타임스탬프와 함께 여기에 들어갑니다.\n[00:15] 새로운 스피커 또는 주제 변경 시 새로운 세그먼트를 시작합니다.\n[00:30] 각 세그먼트는 90초를 넘지 않도록 짧게 유지합니다.",
-            },
-            null,
-            2
-        )
-    );
+    const [analysisData, setAnalysisData] =
+        useState(`Analyze the provided video content and generate a structured JSON output. The JSON must contain two main fields: 'analysis' and 'transcript_text'.
+
+The 'analysis' field must be an object containing:
+- 'summary': A very concise summary of the video content (1-2 sentences) in Koraen.
+- 'keywords': An array of 5 key terms that English learners might not know or find challenging.
+- 'slang_expressions': An array of objects, where each object has 'expression' and 'meaning (meaning in Korean)'.
+- 'main_questions': An array of 2 main questions based on the video content.
+
+The 'transcript_text' field must contain a detailed transcript of the video, adhering strictly to the following segmentation rules:
+1. Each segment must begin with a timestamp in the EXACT format [MM:SS], followed immediately by the text. Example: '[00:05] This is the text at 5 seconds.'
+2. Create a new timestamped segment for every change in speaker.
+3. If a single person speaks for an extended period, create a new timestamped segment after a natural pause or a shift in topic.
+4. Crucially, ensure that no single segment represents more than 20 seconds of video time. Aim for shorter, more frequent segments (ideally every 10-15 seconds) for better readability.
+5. Do NOT include any other timestamps or time ranges within the transcript text itself.
+
+Ensure the entire output is a single, strictly valid JSON object."
+{
+"analysis": {
+"summary": "여기에 영상 내용 요약 (1-2 문장)을 입력하세요.",
+"keywords": [
+"키워드1",
+"키워드2",
+"키워드3",
+"키워드4",
+"키워드5"
+],
+"slang_expressions": [
+{
+"expression": "슬랭표현1",
+"meaning": "의미1"
+},
+{
+"expression": "슬랭표현2",
+"meaning": "의미2"
+}
+],
+"main_questions": [
+"주요 질문1",
+"주요 질문2"
+]
+},
+"transcript_text": "[00:00] 영상 스크립트가 타임스탬프와 함께 여기에 들어갑니다.\n[00:15] 새로운 스피커 또는 주제 변경 시 새로운 세그먼트를 시작합니다.\n[00:30] 각 세그먼트는 20초를 넘지 않도록 짧게 유지합니다. (10-15초가 Best)"
+}`);
+    const [copyStatus, setCopyStatus] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState("");
@@ -141,6 +161,18 @@ export default function NewVideoPage() {
         return `${minutes}:${secs.toString().padStart(2, "0")}`;
     };
 
+    const handleCopyPrompt = async () => {
+        try {
+            await navigator.clipboard.writeText(analysisData);
+            setCopyStatus("Copied!");
+            setTimeout(() => setCopyStatus(null), 2000); // Clear message after 2 seconds
+        } catch (err) {
+            console.error("Failed to copy text: ", err);
+            setCopyStatus("Failed to copy!");
+            setTimeout(() => setCopyStatus(null), 2000);
+        }
+    };
+
     return (
         <div>
             <h1 className="text-2xl font-bold text-gray-900 mb-6">
@@ -235,21 +267,21 @@ export default function NewVideoPage() {
                         <textarea
                             value={analysisData}
                             onChange={(e) => setAnalysisData(e.target.value)}
-                            placeholder={`{
-  "analysis": {
-    "summary": "Video summary here...",
-    "keywords": ["keyword1", "keyword2"],
-    "slang_expressions": [
-      {"expression": "slang1", "meaning": "meaning1"}
-    ],
-    "main_questions": ["question1", "question2"]
-  },
-  "transcript_text": "Full transcript with timestamps..."
-}`}
                             rows={15}
                             // --- 수정된 부분 ---
                             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm text-gray-900 placeholder:text-gray-400"
                         />
+                        <button
+                            onClick={handleCopyPrompt}
+                            className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+                        >
+                            Copy Prompt
+                        </button>
+                        {copyStatus && (
+                            <span className="ml-2 text-sm text-green-600">
+                                {copyStatus}
+                            </span>
+                        )}
                     </div>
 
                     <div className="mt-6 flex gap-4">
