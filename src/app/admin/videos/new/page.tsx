@@ -17,55 +17,67 @@ export default function NewVideoPage() {
     const [youtubeDetails, setYoutubeDetails] = useState<YouTubeDetails | null>(
         null
     );
-    const [analysisData, setAnalysisData] =
-        useState(`Analyze the provided video content and generate a structured JSON output. The JSON must contain two main fields: 'analysis' and 'transcript_text'.
-
-The 'analysis' field must be an object containing:
-- 'summary': A very concise summary of the video content (1-2 sentences) in Koraen.
-- 'keywords': An array of 5 key terms that English learners might not know or find challenging.
-- 'slang_expressions': An array of objects, where each object has 'expression' and 'meaning (meaning in Korean)'.
-- 'main_questions': An array of 2 main questions based on the video content.
-
-The 'transcript_text' field must contain a detailed transcript of the video, adhering strictly to the following segmentation rules:
-1. Each segment must begin with a timestamp in the EXACT format [MM:SS], followed immediately by the text. Example: '[00:05] This is the text at 5 seconds.'
-2. Create a new timestamped segment for every change in speaker.
-3. If a single person speaks for an extended period, create a new timestamped segment after a natural pause or a shift in topic.
-4. Crucially, ensure that no single segment represents more than 20 seconds of video time. Aim for shorter, more frequent segments (ideally every 10-15 seconds) for better readability.
-5. Do NOT include any other timestamps or time ranges within the transcript text itself.
-
-Ensure the entire output is a single, strictly valid JSON object."
-{
-"analysis": {
-"summary": "여기에 영상 내용 요약 (1-2 문장)을 입력하세요.",
-"keywords": [
-"키워드1",
-"키워드2",
-"키워드3",
-"키워드4",
-"키워드5"
-],
-"slang_expressions": [
-{
-"expression": "슬랭표현1",
-"meaning": "의미1"
-},
-{
-"expression": "슬랭표현2",
-"meaning": "의미2"
-}
-],
-"main_questions": [
-"주요 질문1",
-"주요 질문2"
-]
-},
-"transcript_text": "[00:00] 영상 스크립트가 타임스탬프와 함께 여기에 들어갑니다.\n[00:15] 새로운 스피커 또는 주제 변경 시 새로운 세그먼트를 시작합니다.\n[00:30] 각 세그먼트는 20초를 넘지 않도록 짧게 유지합니다. (10-15초가 Best)"
-}`);
+    const [analysisData, setAnalysisData] = useState("");
+    const [uploadedSubtitleText, setUploadedSubtitleText] = useState("");
+    const [analysisLoading, setAnalysisLoading] = useState(false);
     const [copyStatus, setCopyStatus] = useState<string | null>(null);
-    const [loading, setLoading] = useState(false);
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState("");
     const router = useRouter();
+
+    const parseSrtContent = (srtContent: string): string => {
+        const lines = srtContent.split(/\r?\n/);
+        let formattedTranscript = "";
+        let currentTextLines: string[] = [];
+        let currentTimestamp = "";
+
+        const formatTime = (timeStr: string): string => {
+            // Handles both HH:MM:SS,ms and HH:MM:SS.ms formats
+            const parts = timeStr.split(/[:,.]/);
+            const minutes = parseInt(parts[1] || "0", 10);
+            const seconds = parseInt(parts[2] || "0", 10);
+            return `[${minutes.toString().padStart(2, "0")}:${seconds
+                .toString()
+                .padStart(2, "0")}]`;
+        };
+
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+
+            // Check for timestamp pattern (e.g., 00:00:00,000 --> 00:00:00,000)
+            if (
+                trimmedLine.match(
+                    /^\d{2}:\d{2}:\d{2}[,.]\d{3}\s*-->\s*\d{2}:\d{2}:\d{2}[,.]\d{3}$/
+                )
+            ) {
+                if (currentTextLines.length > 0) {
+                    const combinedText = currentTextLines.join(" ").trim();
+                    if (combinedText) {
+                        formattedTranscript += `${currentTimestamp} ${combinedText}\n`;
+                    }
+                    currentTextLines = []; // Reset for next block
+                }
+                const [startTime] = trimmedLine.split(" --> ");
+                currentTimestamp = formatTime(startTime);
+            } else if (trimmedLine === "" || /^[0-9]+$/.test(trimmedLine)) {
+                // Ignore empty lines or sequence numbers (like '1', '2', etc.)
+                continue;
+            } else if (!trimmedLine.match(/^(\[[^\]]+\]|\(.*?\)|\{.*?\})$/i)) {
+                // Add non-empty lines that are not directives like [Music]
+                currentTextLines.push(trimmedLine);
+            }
+        }
+
+        // Add any remaining text after the last timestamp
+        if (currentTextLines.length > 0) {
+            const combinedText = currentTextLines.join(" ").trim();
+            if (combinedText) {
+                formattedTranscript += `${currentTimestamp} ${combinedText}\n`;
+            }
+        }
+
+        return formattedTranscript.trim();
+    };
 
     const fetchYouTubeDetails = async () => {
         if (!youtubeUrl.trim()) {
@@ -73,7 +85,7 @@ Ensure the entire output is a single, strictly valid JSON object."
             return;
         }
 
-        setLoading(true);
+        setSubmitting(true);
         setError("");
 
         try {
@@ -93,7 +105,69 @@ Ensure the entire output is a single, strictly valid JSON object."
         } catch {
             setError("Error fetching video details");
         } finally {
-            setLoading(false);
+            setSubmitting(false);
+        }
+    };
+
+    const formatDuration = (seconds: number) => {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+
+        if (hours > 0) {
+            return `${hours}:${minutes.toString().padStart(2, "0")}:${secs
+                .toString()
+                .padStart(2, "0")}`;
+        }
+        return `${minutes}:${secs.toString().padStart(2, "0")}`;
+    };
+
+    const handleSubtitleFileChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const srtContent = e.target?.result as string;
+                const parsedContent = parseSrtContent(srtContent);
+                setUploadedSubtitleText(parsedContent);
+            };
+            reader.readAsText(file);
+        }
+    };
+
+    const analyzeSubtitle = async () => {
+        if (!uploadedSubtitleText.trim()) {
+            setError("Please upload a subtitle file.");
+            return;
+        }
+
+        setAnalysisLoading(true);
+        setError("");
+        try {
+            const response = await fetch("/api/analyze-transcript", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    transcript_text: uploadedSubtitleText,
+                }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setAnalysisData(JSON.stringify(data, null, 2));
+            } else {
+                const errorData = await response.json();
+                setError(errorData.error || "Failed to analyze subtitle.");
+            }
+        } catch (err) {
+            setError("Error analyzing subtitle.");
+            console.error("Analysis Error:", err);
+        } finally {
+            setAnalysisLoading(false);
         }
     };
 
@@ -122,8 +196,8 @@ Ensure the entire output is a single, strictly valid JSON object."
                 description: youtubeDetails.description,
                 thumbnailUrl: youtubeDetails.thumbnailUrl,
                 duration: youtubeDetails.duration,
-                analysis: parsedAnalysis.analysis || {},
-                transcript_text: parsedAnalysis.transcript_text || "",
+                analysis: parsedAnalysis.analysis || parsedAnalysis || {},
+                transcript_text: uploadedSubtitleText,
             };
 
             const response = await fetch("/api/admin/register-video", {
@@ -135,7 +209,6 @@ Ensure the entire output is a single, strictly valid JSON object."
             });
 
             if (response.ok) {
-                alert("Video registered successfully!");
                 router.push("/admin/videos");
             } else {
                 const errorData = await response.json();
@@ -146,19 +219,6 @@ Ensure the entire output is a single, strictly valid JSON object."
         } finally {
             setSubmitting(false);
         }
-    };
-
-    const formatDuration = (seconds: number) => {
-        const hours = Math.floor(seconds / 3600);
-        const minutes = Math.floor((seconds % 3600) / 60);
-        const secs = seconds % 60;
-
-        if (hours > 0) {
-            return `${hours}:${minutes.toString().padStart(2, "0")}:${secs
-                .toString()
-                .padStart(2, "0")}`;
-        }
-        return `${minutes}:${secs.toString().padStart(2, "0")}`;
     };
 
     const handleCopyPrompt = async () => {
@@ -197,15 +257,14 @@ Ensure the entire output is a single, strictly valid JSON object."
                         placeholder="Enter YouTube URL"
                         value={youtubeUrl}
                         onChange={(e) => setYoutubeUrl(e.target.value)}
-                        // --- 수정된 부분 ---
                         className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder:text-gray-400"
                     />
                     <button
                         onClick={fetchYouTubeDetails}
-                        disabled={loading}
+                        disabled={submitting}
                         className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50"
                     >
-                        {loading ? "Loading..." : "Fetch Details"}
+                        {submitting ? "Loading..." : "Fetch Details"}
                     </button>
                 </div>
             </div>
@@ -260,6 +319,32 @@ Ensure the entire output is a single, strictly valid JSON object."
                     </div>
 
                     {/* Analysis Data Input */}
+                    <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Upload Subtitle File
+                        </label>
+                        <input
+                            type="file"
+                            accept=".txt,.srt,.vtt"
+                            onChange={handleSubtitleFileChange}
+                            className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                        />
+                        {uploadedSubtitleText && (
+                            <p className="mt-2 text-sm text-gray-500">
+                                File loaded. Click 'Analyze Subtitle' to
+                                process.
+                            </p>
+                        )}
+                        <button
+                            onClick={analyzeSubtitle}
+                            disabled={!uploadedSubtitleText || analysisLoading}
+                            className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 disabled:opacity-50"
+                        >
+                            {analysisLoading
+                                ? "Analyzing..."
+                                : "Analyze Subtitle"}
+                        </button>
+                    </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                             Gemini Analysis Result (JSON format)
@@ -268,20 +353,8 @@ Ensure the entire output is a single, strictly valid JSON object."
                             value={analysisData}
                             onChange={(e) => setAnalysisData(e.target.value)}
                             rows={15}
-                            // --- 수정된 부분 ---
                             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm text-gray-900 placeholder:text-gray-400"
                         />
-                        <button
-                            onClick={handleCopyPrompt}
-                            className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
-                        >
-                            Copy Prompt
-                        </button>
-                        {copyStatus && (
-                            <span className="ml-2 text-sm text-green-600">
-                                {copyStatus}
-                            </span>
-                        )}
                     </div>
 
                     <div className="mt-6 flex gap-4">
